@@ -35,10 +35,18 @@ python3.12 -m venv .venv
 .venv/bin/python -m ipykernel install --user --name crop-challenge --display-name "Crop challenge"
 ```
 
-Open `notebooks/Qiskit_QuantumAfrica_Crop_Challenge.ipynb`, select the **Crop challenge** kernel and run all cells. Local simulation needs no IBM token. Only the optional hardware run needs `requirements-hardware.txt` and credentials in your environment.
+**Quick demo (~15 s):** the three CropGuard-Q parts end to end: quantum kernel vs classical SVM, the tamper alarm under attack, and the noise-canceller on a simulated noisy device.
+
+```bash
+.venv/bin/python -m pip install -r requirements-noise.txt
+.venv/bin/python demo.py
+```
+
+**Starter notebook:** open `notebooks/Qiskit_QuantumAfrica_Crop_Challenge.ipynb`, select the **Crop challenge** kernel and run all cells. Local simulation needs no IBM token. Only the optional hardware run needs `requirements-hardware.txt` and credentials in your environment.
 
 ## Layout
 
+- `demo.py`: the CropGuard-Q walkthrough; `challenge/kernel.py`: our 8-qubit quantum kernel + SVM.
 - `challenge/`: starter code (`models.py` encoding/QNN/control, `submission.py` final `fit`/`predict` interface, `coverage.py`, `data.py`, `metrics.py`).
 - `data/`: supplied tables and PCA views; keep unchanged (checksummed in `manifest.json`). See [data/README.md](data/README.md).
 - `configs/`, `results/`: starter configuration and reference runs. Save our own runs separately.
