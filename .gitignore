@@ -1,7 +1,9 @@
 .venv/
 __pycache__/
 .ipynb_checkpoints/
-outputs/
+outputs/*.dill
+outputs/size*/
+outputs/extended/
 .env
 .env.*
 *.pem

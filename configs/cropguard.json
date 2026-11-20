@@ -1,0 +1,20 @@
+{
+  "quantum": {
+    "scale": 0.075,
+    "C": 100
+  },
+  "poly": {
+    "degree": 3,
+    "coef0": 2,
+    "C": 1
+  },
+  "rbf": {
+    "gamma": 0.06,
+    "C": 30
+  },
+  "forest": {
+    "max_features": 2,
+    "min_samples_leaf": 2
+  },
+  "selection": "Validation macro-F1 over an equal 30-configuration grid per inspector (challenge/tune.py); frozen before any test prediction."
+}

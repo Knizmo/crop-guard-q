@@ -1,0 +1,5003 @@
+{
+ "tamper_rows": [
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 0,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 0,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.06,
+   "undetected": 0.04
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 0,
+   "alarm": "+ poly SVM",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.04
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 0,
+   "alarm": "+ forest",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.08666666666666667,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.08,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.11333333333333333,
+   "undetected": 0.10666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "+ poly SVM",
+   "flagged": 0.06,
+   "undetected": 0.14
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "+ forest",
+   "flagged": 0.04666666666666667,
+   "undetected": 0.13333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.13333333333333333,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.07333333333333333,
+   "undetected": 0.12666666666666668
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "quantum SVM",
+   "accuracy": 0.8466666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "RBF SVM",
+   "accuracy": 0.82
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "forest",
+   "accuracy": 0.86
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "poly SVM",
+   "accuracy": 0.8266666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.12666666666666668,
+   "undetected": 0.08666666666666667,
+   "accuracy": 0.8466666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.06666666666666667,
+   "undetected": 0.12666666666666668,
+   "accuracy": 0.84
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.24666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.12666666666666668,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "+ poly SVM",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.22
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "+ forest",
+   "flagged": 0.1,
+   "undetected": 0.15333333333333332
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.12666666666666668
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.13333333333333333,
+   "undetected": 0.14666666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "quantum SVM",
+   "accuracy": 0.7466666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "RBF SVM",
+   "accuracy": 0.7533333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "forest",
+   "accuracy": 0.8266666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "poly SVM",
+   "accuracy": 0.7333333333333333
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.15333333333333332,
+   "undetected": 0.15333333333333332,
+   "accuracy": 0.7866666666666666
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.10666666666666667,
+   "undetected": 0.16,
+   "accuracy": 0.7933333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.5066666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.19333333333333333,
+   "undetected": 0.3466666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "+ poly SVM",
+   "flagged": 0.12666666666666668,
+   "undetected": 0.3933333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "+ forest",
+   "flagged": 0.3,
+   "undetected": 0.20666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.36,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.32666666666666666,
+   "undetected": 0.19333333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "quantum SVM",
+   "accuracy": 0.58
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "RBF SVM",
+   "accuracy": 0.49333333333333335
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "forest",
+   "accuracy": 0.78
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "poly SVM",
+   "accuracy": 0.5733333333333334
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.3,
+   "undetected": 0.24,
+   "accuracy": 0.6
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.19333333333333333,
+   "undetected": 0.25333333333333335,
+   "accuracy": 0.6
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.9866666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.19333333333333333,
+   "undetected": 0.8
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "+ poly SVM",
+   "flagged": 0.09333333333333334,
+   "undetected": 0.9
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "+ forest",
+   "flagged": 0.6933333333333334,
+   "undetected": 0.29333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.7466666666666667,
+   "undetected": 0.24666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.7066666666666667,
+   "undetected": 0.2866666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "quantum SVM",
+   "accuracy": 0.1
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "RBF SVM",
+   "accuracy": 0.013333333333333334
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "forest",
+   "accuracy": 0.6666666666666666
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "poly SVM",
+   "accuracy": 0.06666666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "quantum committee",
+   "flagged": 0.4,
+   "undetected": 0.5,
+   "accuracy": 0.16
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "seed": 0,
+   "alarm": "matched control",
+   "flagged": 0.38,
+   "undetected": 0.5533333333333333,
+   "accuracy": 0.10666666666666667
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 1,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 1,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.06,
+   "undetected": 0.04
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 1,
+   "alarm": "+ poly SVM",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.04
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 1,
+   "alarm": "+ forest",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.09333333333333334,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.08666666666666667,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.12,
+   "undetected": 0.10666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "+ poly SVM",
+   "flagged": 0.06666666666666667,
+   "undetected": 0.14
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "+ forest",
+   "flagged": 0.04,
+   "undetected": 0.14
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.14,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.08,
+   "undetected": 0.12666666666666668
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "quantum SVM",
+   "accuracy": 0.84
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "RBF SVM",
+   "accuracy": 0.82
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "forest",
+   "accuracy": 0.8533333333333334
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "poly SVM",
+   "accuracy": 0.82
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.12,
+   "undetected": 0.08666666666666667,
+   "accuracy": 0.8533333333333334
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.06666666666666667,
+   "undetected": 0.12666666666666668,
+   "accuracy": 0.84
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.25333333333333335
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.12666666666666668,
+   "undetected": 0.18666666666666668
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "+ poly SVM",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.22
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "+ forest",
+   "flagged": 0.10666666666666667,
+   "undetected": 0.15333333333333332
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.2,
+   "undetected": 0.12
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.13333333333333333,
+   "undetected": 0.14666666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "quantum SVM",
+   "accuracy": 0.7333333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "RBF SVM",
+   "accuracy": 0.7466666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "forest",
+   "accuracy": 0.8333333333333334
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "poly SVM",
+   "accuracy": 0.74
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.13333333333333333,
+   "undetected": 0.15333333333333332,
+   "accuracy": 0.7733333333333333
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.12666666666666668,
+   "undetected": 0.16,
+   "accuracy": 0.7733333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.48
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.17333333333333334,
+   "undetected": 0.36666666666666664
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "+ poly SVM",
+   "flagged": 0.10666666666666667,
+   "undetected": 0.3933333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "+ forest",
+   "flagged": 0.29333333333333333,
+   "undetected": 0.19333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.36666666666666664,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.31333333333333335,
+   "undetected": 0.18666666666666668
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "quantum SVM",
+   "accuracy": 0.5333333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "RBF SVM",
+   "accuracy": 0.52
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "forest",
+   "accuracy": 0.7866666666666666
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "poly SVM",
+   "accuracy": 0.5666666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.31333333333333335,
+   "undetected": 0.23333333333333334,
+   "accuracy": 0.5933333333333334
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.22666666666666666,
+   "undetected": 0.23333333333333334,
+   "accuracy": 0.6066666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.96
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.20666666666666667,
+   "undetected": 0.76
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "+ poly SVM",
+   "flagged": 0.09333333333333334,
+   "undetected": 0.88
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "+ forest",
+   "flagged": 0.64,
+   "undetected": 0.32
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.7,
+   "undetected": 0.26666666666666666
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.66,
+   "undetected": 0.31333333333333335
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "quantum SVM",
+   "accuracy": 0.12666666666666668
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "RBF SVM",
+   "accuracy": 0.04
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "forest",
+   "accuracy": 0.6466666666666666
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "poly SVM",
+   "accuracy": 0.08666666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "quantum committee",
+   "flagged": 0.38666666666666666,
+   "undetected": 0.5066666666666667,
+   "accuracy": 0.19333333333333333
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "seed": 1,
+   "alarm": "matched control",
+   "flagged": 0.36,
+   "undetected": 0.5333333333333333,
+   "accuracy": 0.13333333333333333
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 2,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 2,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.06,
+   "undetected": 0.04
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 2,
+   "alarm": "+ poly SVM",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.04
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 2,
+   "alarm": "+ forest",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.09333333333333334,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "attack": "none",
+   "eps": 0,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.08666666666666667,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.10666666666666667,
+   "undetected": 0.11333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "+ poly SVM",
+   "flagged": 0.06,
+   "undetected": 0.14
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "+ forest",
+   "flagged": 0.05333333333333334,
+   "undetected": 0.13333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.13333333333333333,
+   "undetected": 0.09333333333333334
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.08666666666666667,
+   "undetected": 0.12
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "quantum SVM",
+   "accuracy": 0.84
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "RBF SVM",
+   "accuracy": 0.82
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "forest",
+   "accuracy": 0.8533333333333334
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "poly SVM",
+   "accuracy": 0.8266666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.12,
+   "undetected": 0.09333333333333334,
+   "accuracy": 0.8333333333333334
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.07333333333333333,
+   "undetected": 0.12666666666666668,
+   "accuracy": 0.84
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.24666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.11333333333333333,
+   "undetected": 0.19333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "+ poly SVM",
+   "flagged": 0.06,
+   "undetected": 0.21333333333333335
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "+ forest",
+   "flagged": 0.10666666666666667,
+   "undetected": 0.15333333333333332
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.13333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.14,
+   "undetected": 0.14666666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "quantum SVM",
+   "accuracy": 0.7333333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "RBF SVM",
+   "accuracy": 0.7533333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "forest",
+   "accuracy": 0.82
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "poly SVM",
+   "accuracy": 0.74
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.12666666666666668,
+   "undetected": 0.15333333333333332,
+   "accuracy": 0.7733333333333333
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.11333333333333333,
+   "undetected": 0.16,
+   "accuracy": 0.78
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.49333333333333335
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.36
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "+ poly SVM",
+   "flagged": 0.09333333333333334,
+   "undetected": 0.41333333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "+ forest",
+   "flagged": 0.31333333333333335,
+   "undetected": 0.18666666666666668
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.36666666666666664,
+   "undetected": 0.18666666666666668
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.32666666666666666,
+   "undetected": 0.18
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "quantum SVM",
+   "accuracy": 0.5333333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "RBF SVM",
+   "accuracy": 0.5066666666666667
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "forest",
+   "accuracy": 0.7866666666666666
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "poly SVM",
+   "accuracy": 0.56
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.32,
+   "undetected": 0.22666666666666666,
+   "accuracy": 0.5866666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.22666666666666666,
+   "undetected": 0.23333333333333334,
+   "accuracy": 0.58
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "RBF SVM alone",
+   "flagged": 0.0,
+   "undetected": 0.9666666666666667
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "+ quantum SVM",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.7933333333333333
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "+ poly SVM",
+   "flagged": 0.1,
+   "undetected": 0.88
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "+ forest",
+   "flagged": 0.64,
+   "undetected": 0.32666666666666666
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.7,
+   "undetected": 0.28
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.66,
+   "undetected": 0.32
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "quantum SVM",
+   "accuracy": 0.12
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "RBF SVM",
+   "accuracy": 0.03333333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "forest",
+   "accuracy": 0.6533333333333333
+  },
+  {
+   "attack": "naive transfer",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "poly SVM",
+   "accuracy": 0.08666666666666667
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "quantum committee",
+   "flagged": 0.44,
+   "undetected": 0.5066666666666667,
+   "accuracy": 0.16
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "seed": 2,
+   "alarm": "matched control",
+   "flagged": 0.34,
+   "undetected": 0.56,
+   "accuracy": 0.12666666666666668
+  }
+ ],
+ "poison_rows": [
+  {
+   "rate": 0.1,
+   "draw": 0,
+   "model": "quantum SVM",
+   "macro_f1": 0.8669427282327989
+  },
+  {
+   "rate": 0.1,
+   "draw": 0,
+   "model": "poly SVM",
+   "macro_f1": 0.8805984686705908
+  },
+  {
+   "rate": 0.1,
+   "draw": 0,
+   "model": "RBF SVM",
+   "macro_f1": 0.9061044071967608
+  },
+  {
+   "rate": 0.1,
+   "draw": 0,
+   "model": "forest",
+   "macro_f1": 0.8470161397892491
+  },
+  {
+   "rate": 0.1,
+   "draw": 0,
+   "model": "quantum committee",
+   "macro_f1": 0.8793162393162394
+  },
+  {
+   "rate": 0.1,
+   "draw": 0,
+   "model": "matched control",
+   "macro_f1": 0.8795501939831837
+  },
+  {
+   "rate": 0.1,
+   "draw": 1,
+   "model": "quantum SVM",
+   "macro_f1": 0.866765372815793
+  },
+  {
+   "rate": 0.1,
+   "draw": 1,
+   "model": "poly SVM",
+   "macro_f1": 0.8741473221591042
+  },
+  {
+   "rate": 0.1,
+   "draw": 1,
+   "model": "RBF SVM",
+   "macro_f1": 0.8871185662255545
+  },
+  {
+   "rate": 0.1,
+   "draw": 1,
+   "model": "forest",
+   "macro_f1": 0.8807960557960558
+  },
+  {
+   "rate": 0.1,
+   "draw": 1,
+   "model": "quantum committee",
+   "macro_f1": 0.886926025935927
+  },
+  {
+   "rate": 0.1,
+   "draw": 1,
+   "model": "matched control",
+   "macro_f1": 0.8808046117338767
+  },
+  {
+   "rate": 0.1,
+   "draw": 2,
+   "model": "quantum SVM",
+   "macro_f1": 0.839795144563
+  },
+  {
+   "rate": 0.1,
+   "draw": 2,
+   "model": "poly SVM",
+   "macro_f1": 0.887051282051282
+  },
+  {
+   "rate": 0.1,
+   "draw": 2,
+   "model": "RBF SVM",
+   "macro_f1": 0.899544411687985
+  },
+  {
+   "rate": 0.1,
+   "draw": 2,
+   "model": "forest",
+   "macro_f1": 0.8861722906984576
+  },
+  {
+   "rate": 0.1,
+   "draw": 2,
+   "model": "quantum committee",
+   "macro_f1": 0.9061048095100772
+  },
+  {
+   "rate": 0.1,
+   "draw": 2,
+   "model": "matched control",
+   "macro_f1": 0.8997012138188608
+  },
+  {
+   "rate": 0.1,
+   "draw": 3,
+   "model": "quantum SVM",
+   "macro_f1": 0.8736383442265795
+  },
+  {
+   "rate": 0.1,
+   "draw": 3,
+   "model": "poly SVM",
+   "macro_f1": 0.8396969123041731
+  },
+  {
+   "rate": 0.1,
+   "draw": 3,
+   "model": "RBF SVM",
+   "macro_f1": 0.8937603281249896
+  },
+  {
+   "rate": 0.1,
+   "draw": 3,
+   "model": "forest",
+   "macro_f1": 0.8724924369254264
+  },
+  {
+   "rate": 0.1,
+   "draw": 3,
+   "model": "quantum committee",
+   "macro_f1": 0.8802580258025802
+  },
+  {
+   "rate": 0.1,
+   "draw": 3,
+   "model": "matched control",
+   "macro_f1": 0.8803723509605863
+  },
+  {
+   "rate": 0.1,
+   "draw": 4,
+   "model": "quantum SVM",
+   "macro_f1": 0.8604714928739691
+  },
+  {
+   "rate": 0.1,
+   "draw": 4,
+   "model": "poly SVM",
+   "macro_f1": 0.9076471783682027
+  },
+  {
+   "rate": 0.1,
+   "draw": 4,
+   "model": "RBF SVM",
+   "macro_f1": 0.9133333333333332
+  },
+  {
+   "rate": 0.1,
+   "draw": 4,
+   "model": "forest",
+   "macro_f1": 0.9065946594659465
+  },
+  {
+   "rate": 0.1,
+   "draw": 4,
+   "model": "quantum committee",
+   "macro_f1": 0.906378392941335
+  },
+  {
+   "rate": 0.1,
+   "draw": 4,
+   "model": "matched control",
+   "macro_f1": 0.9067926792679267
+  },
+  {
+   "rate": 0.2,
+   "draw": 0,
+   "model": "quantum SVM",
+   "macro_f1": 0.826388888888889
+  },
+  {
+   "rate": 0.2,
+   "draw": 0,
+   "model": "poly SVM",
+   "macro_f1": 0.8671023965141611
+  },
+  {
+   "rate": 0.2,
+   "draw": 0,
+   "model": "RBF SVM",
+   "macro_f1": 0.8870072573399996
+  },
+  {
+   "rate": 0.2,
+   "draw": 0,
+   "model": "forest",
+   "macro_f1": 0.8785966248446707
+  },
+  {
+   "rate": 0.2,
+   "draw": 0,
+   "model": "quantum committee",
+   "macro_f1": 0.8999786581299186
+  },
+  {
+   "rate": 0.2,
+   "draw": 0,
+   "model": "matched control",
+   "macro_f1": 0.9001521369232309
+  },
+  {
+   "rate": 0.2,
+   "draw": 1,
+   "model": "quantum SVM",
+   "macro_f1": 0.7726890420678215
+  },
+  {
+   "rate": 0.2,
+   "draw": 1,
+   "model": "poly SVM",
+   "macro_f1": 0.8608044733044733
+  },
+  {
+   "rate": 0.2,
+   "draw": 1,
+   "model": "RBF SVM",
+   "macro_f1": 0.8601345883527104
+  },
+  {
+   "rate": 0.2,
+   "draw": 1,
+   "model": "forest",
+   "macro_f1": 0.8597093089039798
+  },
+  {
+   "rate": 0.2,
+   "draw": 1,
+   "model": "quantum committee",
+   "macro_f1": 0.8400635855716857
+  },
+  {
+   "rate": 0.2,
+   "draw": 1,
+   "model": "matched control",
+   "macro_f1": 0.8534363240245594
+  },
+  {
+   "rate": 0.2,
+   "draw": 2,
+   "model": "quantum SVM",
+   "macro_f1": 0.8530490775030861
+  },
+  {
+   "rate": 0.2,
+   "draw": 2,
+   "model": "poly SVM",
+   "macro_f1": 0.8804614318845818
+  },
+  {
+   "rate": 0.2,
+   "draw": 2,
+   "model": "RBF SVM",
+   "macro_f1": 0.8663944216461482
+  },
+  {
+   "rate": 0.2,
+   "draw": 2,
+   "model": "forest",
+   "macro_f1": 0.8520035809248941
+  },
+  {
+   "rate": 0.2,
+   "draw": 2,
+   "model": "quantum committee",
+   "macro_f1": 0.8730799174627192
+  },
+  {
+   "rate": 0.2,
+   "draw": 2,
+   "model": "matched control",
+   "macro_f1": 0.8662290722999425
+  },
+  {
+   "rate": 0.2,
+   "draw": 3,
+   "model": "quantum SVM",
+   "macro_f1": 0.872646515650934
+  },
+  {
+   "rate": 0.2,
+   "draw": 3,
+   "model": "poly SVM",
+   "macro_f1": 0.9001668555913342
+  },
+  {
+   "rate": 0.2,
+   "draw": 3,
+   "model": "RBF SVM",
+   "macro_f1": 0.9072434931162697
+  },
+  {
+   "rate": 0.2,
+   "draw": 3,
+   "model": "forest",
+   "macro_f1": 0.8730398826197145
+  },
+  {
+   "rate": 0.2,
+   "draw": 3,
+   "model": "quantum committee",
+   "macro_f1": 0.9133986928104575
+  },
+  {
+   "rate": 0.2,
+   "draw": 3,
+   "model": "matched control",
+   "macro_f1": 0.9137606837606836
+  },
+  {
+   "rate": 0.2,
+   "draw": 4,
+   "model": "quantum SVM",
+   "macro_f1": 0.820676231921294
+  },
+  {
+   "rate": 0.2,
+   "draw": 4,
+   "model": "poly SVM",
+   "macro_f1": 0.8798111997434561
+  },
+  {
+   "rate": 0.2,
+   "draw": 4,
+   "model": "RBF SVM",
+   "macro_f1": 0.8809288359523572
+  },
+  {
+   "rate": 0.2,
+   "draw": 4,
+   "model": "forest",
+   "macro_f1": 0.8742804814233386
+  },
+  {
+   "rate": 0.2,
+   "draw": 4,
+   "model": "quantum committee",
+   "macro_f1": 0.8745299145299145
+  },
+  {
+   "rate": 0.2,
+   "draw": 4,
+   "model": "matched control",
+   "macro_f1": 0.8935926926025936
+  },
+  {
+   "rate": 0.3,
+   "draw": 0,
+   "model": "quantum SVM",
+   "macro_f1": 0.7876382876382877
+  },
+  {
+   "rate": 0.3,
+   "draw": 0,
+   "model": "poly SVM",
+   "macro_f1": 0.8012447674593693
+  },
+  {
+   "rate": 0.3,
+   "draw": 0,
+   "model": "RBF SVM",
+   "macro_f1": 0.8265938244309868
+  },
+  {
+   "rate": 0.3,
+   "draw": 0,
+   "model": "forest",
+   "macro_f1": 0.853285644154569
+  },
+  {
+   "rate": 0.3,
+   "draw": 0,
+   "model": "quantum committee",
+   "macro_f1": 0.8401389289414377
+  },
+  {
+   "rate": 0.3,
+   "draw": 0,
+   "model": "matched control",
+   "macro_f1": 0.8334652546080603
+  },
+  {
+   "rate": 0.3,
+   "draw": 1,
+   "model": "quantum SVM",
+   "macro_f1": 0.8326856393846072
+  },
+  {
+   "rate": 0.3,
+   "draw": 1,
+   "model": "poly SVM",
+   "macro_f1": 0.8468869195844969
+  },
+  {
+   "rate": 0.3,
+   "draw": 1,
+   "model": "RBF SVM",
+   "macro_f1": 0.8464736942298637
+  },
+  {
+   "rate": 0.3,
+   "draw": 1,
+   "model": "forest",
+   "macro_f1": 0.8523029147685679
+  },
+  {
+   "rate": 0.3,
+   "draw": 1,
+   "model": "quantum committee",
+   "macro_f1": 0.8664194759556927
+  },
+  {
+   "rate": 0.3,
+   "draw": 1,
+   "model": "matched control",
+   "macro_f1": 0.8533496732026142
+  },
+  {
+   "rate": 0.3,
+   "draw": 2,
+   "model": "quantum SVM",
+   "macro_f1": 0.7730818095559737
+  },
+  {
+   "rate": 0.3,
+   "draw": 2,
+   "model": "poly SVM",
+   "macro_f1": 0.8539822564479554
+  },
+  {
+   "rate": 0.3,
+   "draw": 2,
+   "model": "RBF SVM",
+   "macro_f1": 0.8339797206051366
+  },
+  {
+   "rate": 0.3,
+   "draw": 2,
+   "model": "forest",
+   "macro_f1": 0.8667900123345668
+  },
+  {
+   "rate": 0.3,
+   "draw": 2,
+   "model": "quantum committee",
+   "macro_f1": 0.8470843776106934
+  },
+  {
+   "rate": 0.3,
+   "draw": 2,
+   "model": "matched control",
+   "macro_f1": 0.860413123241659
+  },
+  {
+   "rate": 0.3,
+   "draw": 3,
+   "model": "quantum SVM",
+   "macro_f1": 0.765668452859217
+  },
+  {
+   "rate": 0.3,
+   "draw": 3,
+   "model": "poly SVM",
+   "macro_f1": 0.8866799960772305
+  },
+  {
+   "rate": 0.3,
+   "draw": 3,
+   "model": "RBF SVM",
+   "macro_f1": 0.8735520014457396
+  },
+  {
+   "rate": 0.3,
+   "draw": 3,
+   "model": "forest",
+   "macro_f1": 0.8336934773909563
+  },
+  {
+   "rate": 0.3,
+   "draw": 3,
+   "model": "quantum committee",
+   "macro_f1": 0.8540158469288225
+  },
+  {
+   "rate": 0.3,
+   "draw": 3,
+   "model": "matched control",
+   "macro_f1": 0.8803022899377316
+  },
+  {
+   "rate": 0.3,
+   "draw": 4,
+   "model": "quantum SVM",
+   "macro_f1": 0.7540706583702423
+  },
+  {
+   "rate": 0.3,
+   "draw": 4,
+   "model": "poly SVM",
+   "macro_f1": 0.8337893789378938
+  },
+  {
+   "rate": 0.3,
+   "draw": 4,
+   "model": "RBF SVM",
+   "macro_f1": 0.8265221913337483
+  },
+  {
+   "rate": 0.3,
+   "draw": 4,
+   "model": "forest",
+   "macro_f1": 0.8373466542284814
+  },
+  {
+   "rate": 0.3,
+   "draw": 4,
+   "model": "quantum committee",
+   "macro_f1": 0.8125690070523123
+  },
+  {
+   "rate": 0.3,
+   "draw": 4,
+   "model": "matched control",
+   "macro_f1": 0.852830881126347
+  }
+ ],
+ "missing_rows": [
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "quantum SVM",
+   "macro_f1": 0.7526982246454192
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "poly SVM",
+   "macro_f1": 0.7391477618635651
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "RBF SVM",
+   "macro_f1": 0.7603639391294753
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "forest",
+   "macro_f1": 0.8464052287581699
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "quantum committee",
+   "macro_f1": 0.8327372185987798
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "matched control",
+   "macro_f1": 0.7806391373753803
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "quantum committee alarm",
+   "flagged": 0.36,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "missing": 1,
+   "draw": 0,
+   "model": "matched control alarm",
+   "flagged": 0.28,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "quantum SVM",
+   "macro_f1": 0.7797423553034916
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "poly SVM",
+   "macro_f1": 0.7866666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "RBF SVM",
+   "macro_f1": 0.8205022753185612
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "forest",
+   "macro_f1": 0.8605410298311384
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "quantum committee",
+   "macro_f1": 0.8464879285047352
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "matched control",
+   "macro_f1": 0.8199686747551255
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "quantum committee alarm",
+   "flagged": 0.24,
+   "undetected": 0.06
+  },
+  {
+   "missing": 1,
+   "draw": 1,
+   "model": "matched control alarm",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "quantum SVM",
+   "macro_f1": 0.7734053621448579
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "poly SVM",
+   "macro_f1": 0.7996498735654543
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "RBF SVM",
+   "macro_f1": 0.8197800669640469
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "forest",
+   "macro_f1": 0.8870191472588554
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "quantum committee",
+   "macro_f1": 0.8199752188390259
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "matched control",
+   "macro_f1": 0.8265111665514442
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "quantum committee alarm",
+   "flagged": 0.21333333333333335,
+   "undetected": 0.06
+  },
+  {
+   "missing": 1,
+   "draw": 2,
+   "model": "matched control alarm",
+   "flagged": 0.17333333333333334,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "quantum SVM",
+   "macro_f1": 0.7194592715790682
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "poly SVM",
+   "macro_f1": 0.7663412031479258
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "RBF SVM",
+   "macro_f1": 0.7800501634821874
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "forest",
+   "macro_f1": 0.8733066559957315
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "quantum committee",
+   "macro_f1": 0.8133880054672135
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "matched control",
+   "macro_f1": 0.7866526652665268
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "quantum committee alarm",
+   "flagged": 0.28,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 3,
+   "model": "matched control alarm",
+   "flagged": 0.21333333333333335,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "quantum SVM",
+   "macro_f1": 0.765227487945498
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "poly SVM",
+   "macro_f1": 0.7681180454765361
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "RBF SVM",
+   "macro_f1": 0.7727405316396142
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "forest",
+   "macro_f1": 0.8657245348549409
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "quantum committee",
+   "macro_f1": 0.8104769254182003
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "matched control",
+   "macro_f1": 0.7993217670390894
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "quantum committee alarm",
+   "flagged": 0.28,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 1,
+   "draw": 4,
+   "model": "matched control alarm",
+   "flagged": 0.21333333333333335,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "quantum SVM",
+   "macro_f1": 0.8001193452678601
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "poly SVM",
+   "macro_f1": 0.7612614237614238
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "RBF SVM",
+   "macro_f1": 0.7878960883013568
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "forest",
+   "macro_f1": 0.8736934773909564
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "quantum committee",
+   "macro_f1": 0.8463549391376385
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "matched control",
+   "macro_f1": 0.8076339236902775
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "quantum committee alarm",
+   "flagged": 0.26,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 5,
+   "model": "matched control alarm",
+   "flagged": 0.24666666666666667,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "quantum SVM",
+   "macro_f1": 0.7863562091503268
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "poly SVM",
+   "macro_f1": 0.7598499849985
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "RBF SVM",
+   "macro_f1": 0.7801984049795759
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "forest",
+   "macro_f1": 0.8603240324032404
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "quantum committee",
+   "macro_f1": 0.8066498316498317
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "matched control",
+   "macro_f1": 0.7736400402085232
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "quantum committee alarm",
+   "flagged": 0.24,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 1,
+   "draw": 6,
+   "model": "matched control alarm",
+   "flagged": 0.22666666666666666,
+   "undetected": 0.06
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "quantum SVM",
+   "macro_f1": 0.7472125655204712
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "poly SVM",
+   "macro_f1": 0.799280474606165
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "RBF SVM",
+   "macro_f1": 0.8202862576318686
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "forest",
+   "macro_f1": 0.8729087138176682
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "quantum committee",
+   "macro_f1": 0.8266666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "matched control",
+   "macro_f1": 0.8268964151317092
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "quantum committee alarm",
+   "flagged": 0.29333333333333333,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "missing": 1,
+   "draw": 7,
+   "model": "matched control alarm",
+   "flagged": 0.22,
+   "undetected": 0.04
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "quantum SVM",
+   "macro_f1": 0.7199445434739552
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "poly SVM",
+   "macro_f1": 0.774118397829738
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "RBF SVM",
+   "macro_f1": 0.7540477767510279
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "forest",
+   "macro_f1": 0.8804753856300248
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "quantum committee",
+   "macro_f1": 0.7869389106502509
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "matched control",
+   "macro_f1": 0.774258793944616
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "quantum committee alarm",
+   "flagged": 0.28,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 8,
+   "model": "matched control alarm",
+   "flagged": 0.22,
+   "undetected": 0.06
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "quantum SVM",
+   "macro_f1": 0.7326503202791863
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "poly SVM",
+   "macro_f1": 0.7799665831244779
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "RBF SVM",
+   "macro_f1": 0.773180784156296
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "forest",
+   "macro_f1": 0.8935253525352534
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "quantum committee",
+   "macro_f1": 0.8390828341251807
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "matched control",
+   "macro_f1": 0.7994676392103427
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "quantum committee alarm",
+   "flagged": 0.32,
+   "undetected": 0.04
+  },
+  {
+   "missing": 1,
+   "draw": 9,
+   "model": "matched control alarm",
+   "flagged": 0.24,
+   "undetected": 0.04
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "quantum SVM",
+   "macro_f1": 0.7464230779030766
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "poly SVM",
+   "macro_f1": 0.765443406688847
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "RBF SVM",
+   "macro_f1": 0.7992249194598052
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "forest",
+   "macro_f1": 0.8606196581196581
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "quantum committee",
+   "macro_f1": 0.8059036346327174
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "matched control",
+   "macro_f1": 0.7989442148098306
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "quantum committee alarm",
+   "flagged": 0.2866666666666667,
+   "undetected": 0.04
+  },
+  {
+   "missing": 1,
+   "draw": 10,
+   "model": "matched control alarm",
+   "flagged": 0.22,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "quantum SVM",
+   "macro_f1": 0.7457652476798279
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "poly SVM",
+   "macro_f1": 0.7605555555555555
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "RBF SVM",
+   "macro_f1": 0.8126549433058807
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "forest",
+   "macro_f1": 0.85985931926526
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "quantum committee",
+   "macro_f1": 0.8394513601845621
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "matched control",
+   "macro_f1": 0.8258557473571524
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "quantum committee alarm",
+   "flagged": 0.25333333333333335,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 1,
+   "draw": 11,
+   "model": "matched control alarm",
+   "flagged": 0.22666666666666666,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "quantum SVM",
+   "macro_f1": 0.7060185185185186
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "poly SVM",
+   "macro_f1": 0.7660493678474699
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "RBF SVM",
+   "macro_f1": 0.7729260790156686
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "forest",
+   "macro_f1": 0.8458017306735331
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "quantum committee",
+   "macro_f1": 0.8053112910075203
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "matched control",
+   "macro_f1": 0.8067347279217962
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "quantum committee alarm",
+   "flagged": 0.30666666666666664,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 12,
+   "model": "matched control alarm",
+   "flagged": 0.24,
+   "undetected": 0.06
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "quantum SVM",
+   "macro_f1": 0.7261620579533682
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "poly SVM",
+   "macro_f1": 0.7868506850685067
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "RBF SVM",
+   "macro_f1": 0.8008958633958634
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "forest",
+   "macro_f1": 0.8863625450180072
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "quantum committee",
+   "macro_f1": 0.8198529411764706
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "matched control",
+   "macro_f1": 0.8070889006376366
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "quantum committee alarm",
+   "flagged": 0.26,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 13,
+   "model": "matched control alarm",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "quantum SVM",
+   "macro_f1": 0.7467197750702906
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "poly SVM",
+   "macro_f1": 0.7660493678474699
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "RBF SVM",
+   "macro_f1": 0.786939649404523
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "forest",
+   "macro_f1": 0.8733333333333334
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "quantum committee",
+   "macro_f1": 0.8122782454751866
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "matched control",
+   "macro_f1": 0.8196019452352995
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "quantum committee alarm",
+   "flagged": 0.26666666666666666,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 14,
+   "model": "matched control alarm",
+   "flagged": 0.22,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "quantum SVM",
+   "macro_f1": 0.7735641753516629
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "poly SVM",
+   "macro_f1": 0.7859649122807019
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "RBF SVM",
+   "macro_f1": 0.8331536190056252
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "forest",
+   "macro_f1": 0.8795801148742325
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "quantum committee",
+   "macro_f1": 0.8532647907647908
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "matched control",
+   "macro_f1": 0.8331649491479759
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "quantum committee alarm",
+   "flagged": 0.24666666666666667,
+   "undetected": 0.04
+  },
+  {
+   "missing": 1,
+   "draw": 15,
+   "model": "matched control alarm",
+   "flagged": 0.2,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "quantum SVM",
+   "macro_f1": 0.7599359743897559
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "poly SVM",
+   "macro_f1": 0.7790811574653947
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "RBF SVM",
+   "macro_f1": 0.812908496732026
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "forest",
+   "macro_f1": 0.8739743589743588
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "quantum committee",
+   "macro_f1": 0.8192735042735042
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "matched control",
+   "macro_f1": 0.8193055956081045
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "quantum committee alarm",
+   "flagged": 0.21333333333333335,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 16,
+   "model": "matched control alarm",
+   "flagged": 0.18666666666666668,
+   "undetected": 0.06
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "quantum SVM",
+   "macro_f1": 0.7739090968034753
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "poly SVM",
+   "macro_f1": 0.8192521367521367
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "RBF SVM",
+   "macro_f1": 0.8133866720005334
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "forest",
+   "macro_f1": 0.8397246391305796
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "quantum committee",
+   "macro_f1": 0.8662771963742838
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "matched control",
+   "macro_f1": 0.8399899989998999
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "quantum committee alarm",
+   "flagged": 0.2733333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 17,
+   "model": "matched control alarm",
+   "flagged": 0.22666666666666666,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "quantum SVM",
+   "macro_f1": 0.7464420840709501
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "poly SVM",
+   "macro_f1": 0.7597251927148835
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "RBF SVM",
+   "macro_f1": 0.8131439242363613
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "forest",
+   "macro_f1": 0.8599918208922167
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "quantum committee",
+   "macro_f1": 0.8188513472018627
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "matched control",
+   "macro_f1": 0.7996677009308377
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "quantum committee alarm",
+   "flagged": 0.22666666666666666,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 18,
+   "model": "matched control alarm",
+   "flagged": 0.19333333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "quantum SVM",
+   "macro_f1": 0.7469046798943707
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "poly SVM",
+   "macro_f1": 0.7731673138431586
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "RBF SVM",
+   "macro_f1": 0.8003784004840752
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "forest",
+   "macro_f1": 0.8802148418725367
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "quantum committee",
+   "macro_f1": 0.8331545951714019
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "matched control",
+   "macro_f1": 0.8207302189185484
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "quantum committee alarm",
+   "flagged": 0.29333333333333333,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 1,
+   "draw": 19,
+   "model": "matched control alarm",
+   "flagged": 0.25333333333333335,
+   "undetected": 0.04
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "quantum SVM",
+   "macro_f1": 0.6278732055431084
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "poly SVM",
+   "macro_f1": 0.6265546218487394
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "RBF SVM",
+   "macro_f1": 0.6876694053373544
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "forest",
+   "macro_f1": 0.8613735925563882
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "quantum committee",
+   "macro_f1": 0.7668015164747649
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "matched control",
+   "macro_f1": 0.6946561083719308
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "quantum committee alarm",
+   "flagged": 0.4533333333333333,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 0,
+   "model": "matched control alarm",
+   "flagged": 0.36666666666666664,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "quantum SVM",
+   "macro_f1": 0.6724190494528418
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "poly SVM",
+   "macro_f1": 0.7206538498457135
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "RBF SVM",
+   "macro_f1": 0.7214181286549707
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "forest",
+   "macro_f1": 0.8871177944862155
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "quantum committee",
+   "macro_f1": 0.7809468143355739
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "matched control",
+   "macro_f1": 0.7487236851387168
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "quantum committee alarm",
+   "flagged": 0.37333333333333335,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 1,
+   "model": "matched control alarm",
+   "flagged": 0.30666666666666664,
+   "undetected": 0.04
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "quantum SVM",
+   "macro_f1": 0.6947496947496948
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "poly SVM",
+   "macro_f1": 0.6975978973961942
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "RBF SVM",
+   "macro_f1": 0.7149423665019996
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "forest",
+   "macro_f1": 0.7999032661886879
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "quantum committee",
+   "macro_f1": 0.7674879250360508
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "matched control",
+   "macro_f1": 0.7268244536071361
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "quantum committee alarm",
+   "flagged": 0.3933333333333333,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 2,
+   "model": "matched control alarm",
+   "flagged": 0.30666666666666664,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "quantum SVM",
+   "macro_f1": 0.6730471713029399
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "poly SVM",
+   "macro_f1": 0.6988627885875592
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "RBF SVM",
+   "macro_f1": 0.7193877551020408
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "forest",
+   "macro_f1": 0.8203505644682115
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "quantum committee",
+   "macro_f1": 0.7458341438111912
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "matched control",
+   "macro_f1": 0.7533369408369408
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "quantum committee alarm",
+   "flagged": 0.3333333333333333,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 3,
+   "model": "matched control alarm",
+   "flagged": 0.28,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "quantum SVM",
+   "macro_f1": 0.6662705486234898
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "poly SVM",
+   "macro_f1": 0.721256806050298
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "RBF SVM",
+   "macro_f1": 0.7130476509678662
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "forest",
+   "macro_f1": 0.8341880341880342
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "quantum committee",
+   "macro_f1": 0.739848775078133
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "matched control",
+   "macro_f1": 0.7398765810390976
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "quantum committee alarm",
+   "flagged": 0.35333333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 4,
+   "model": "matched control alarm",
+   "flagged": 0.2733333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "quantum SVM",
+   "macro_f1": 0.6914436629207428
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "poly SVM",
+   "macro_f1": 0.6748717948717949
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "RBF SVM",
+   "macro_f1": 0.7168458781362007
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "forest",
+   "macro_f1": 0.8340318479860832
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "quantum committee",
+   "macro_f1": 0.761214517989434
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "matched control",
+   "macro_f1": 0.7478125439601294
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "quantum committee alarm",
+   "flagged": 0.38,
+   "undetected": 0.04
+  },
+  {
+   "missing": 2,
+   "draw": 5,
+   "model": "matched control alarm",
+   "flagged": 0.32666666666666666,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "quantum SVM",
+   "macro_f1": 0.6667848948470548
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "poly SVM",
+   "macro_f1": 0.7199445434739552
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "RBF SVM",
+   "macro_f1": 0.715195122768231
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "forest",
+   "macro_f1": 0.8535520875016674
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "quantum committee",
+   "macro_f1": 0.7735581426468622
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "matched control",
+   "macro_f1": 0.7349778659296243
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "quantum committee alarm",
+   "flagged": 0.37333333333333335,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 6,
+   "model": "matched control alarm",
+   "flagged": 0.26666666666666666,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "quantum SVM",
+   "macro_f1": 0.6793589743589744
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "poly SVM",
+   "macro_f1": 0.7288466232641501
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "RBF SVM",
+   "macro_f1": 0.7294928472100871
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "forest",
+   "macro_f1": 0.846164586131601
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "quantum committee",
+   "macro_f1": 0.7688334350344178
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "matched control",
+   "macro_f1": 0.7689421221757433
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "quantum committee alarm",
+   "flagged": 0.4,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 7,
+   "model": "matched control alarm",
+   "flagged": 0.32,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "quantum SVM",
+   "macro_f1": 0.620809128491695
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "poly SVM",
+   "macro_f1": 0.6591140159767611
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "RBF SVM",
+   "macro_f1": 0.672978631196453
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "forest",
+   "macro_f1": 0.8342553727558792
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "quantum committee",
+   "macro_f1": 0.7332493249324932
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "matched control",
+   "macro_f1": 0.7329426820233044
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "quantum committee alarm",
+   "flagged": 0.44,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 8,
+   "model": "matched control alarm",
+   "flagged": 0.3466666666666667,
+   "undetected": 0.08
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "quantum SVM",
+   "macro_f1": 0.6865811965811967
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "poly SVM",
+   "macro_f1": 0.736736446591519
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "RBF SVM",
+   "macro_f1": 0.7603594804598713
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "forest",
+   "macro_f1": 0.8407258796249623
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "quantum committee",
+   "macro_f1": 0.7931568667070789
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "matched control",
+   "macro_f1": 0.7923076923076923
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "quantum committee alarm",
+   "flagged": 0.38666666666666666,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 9,
+   "model": "matched control alarm",
+   "flagged": 0.29333333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "quantum SVM",
+   "macro_f1": 0.6535094037615047
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "poly SVM",
+   "macro_f1": 0.685783080735258
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "RBF SVM",
+   "macro_f1": 0.6802246366919089
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "forest",
+   "macro_f1": 0.8155679131742962
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "quantum committee",
+   "macro_f1": 0.7404098444320358
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "matched control",
+   "macro_f1": 0.7338803891510616
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "quantum committee alarm",
+   "flagged": 0.41333333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 10,
+   "model": "matched control alarm",
+   "flagged": 0.37333333333333335,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "quantum SVM",
+   "macro_f1": 0.6595750784377691
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "poly SVM",
+   "macro_f1": 0.6534401709401709
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "RBF SVM",
+   "macro_f1": 0.6865814638731719
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "forest",
+   "macro_f1": 0.8418209876543209
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "quantum committee",
+   "macro_f1": 0.7330113173260647
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "matched control",
+   "macro_f1": 0.7005611492014415
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "quantum committee alarm",
+   "flagged": 0.3933333333333333,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 11,
+   "model": "matched control alarm",
+   "flagged": 0.3466666666666667,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "quantum SVM",
+   "macro_f1": 0.6334899350363268
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "poly SVM",
+   "macro_f1": 0.6926667081767498
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "RBF SVM",
+   "macro_f1": 0.7069606337158518
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "forest",
+   "macro_f1": 0.8002702311441393
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "quantum committee",
+   "macro_f1": 0.7464710085320236
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "matched control",
+   "macro_f1": 0.7337871322758974
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "quantum committee alarm",
+   "flagged": 0.4,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 2,
+   "draw": 12,
+   "model": "matched control alarm",
+   "flagged": 0.32666666666666666,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "quantum SVM",
+   "macro_f1": 0.6596452978631197
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "poly SVM",
+   "macro_f1": 0.7073869547819127
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "RBF SVM",
+   "macro_f1": 0.7227419657706959
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "forest",
+   "macro_f1": 0.8413539986441312
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "quantum committee",
+   "macro_f1": 0.7548729539347615
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "matched control",
+   "macro_f1": 0.7419919255324857
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "quantum committee alarm",
+   "flagged": 0.34,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 2,
+   "draw": 13,
+   "model": "matched control alarm",
+   "flagged": 0.26,
+   "undetected": 0.08
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "quantum SVM",
+   "macro_f1": 0.6877104377104377
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "poly SVM",
+   "macro_f1": 0.7396980856960594
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "RBF SVM",
+   "macro_f1": 0.7621121595840696
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "forest",
+   "macro_f1": 0.8603548085901028
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "quantum committee",
+   "macro_f1": 0.7871532509744635
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "matched control",
+   "macro_f1": 0.7942628903413217
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "quantum committee alarm",
+   "flagged": 0.36666666666666664,
+   "undetected": 0.04
+  },
+  {
+   "missing": 2,
+   "draw": 14,
+   "model": "matched control alarm",
+   "flagged": 0.2733333333333333,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "quantum SVM",
+   "macro_f1": 0.6725817606032448
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "poly SVM",
+   "macro_f1": 0.6654411764705882
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "RBF SVM",
+   "macro_f1": 0.7004605251307424
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "forest",
+   "macro_f1": 0.8859703881552621
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "quantum committee",
+   "macro_f1": 0.7667542264430525
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "matched control",
+   "macro_f1": 0.7264665866346539
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "quantum committee alarm",
+   "flagged": 0.3933333333333333,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "missing": 2,
+   "draw": 15,
+   "model": "matched control alarm",
+   "flagged": 0.34,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "quantum SVM",
+   "macro_f1": 0.6947496947496948
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "poly SVM",
+   "macro_f1": 0.7186547286672443
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "RBF SVM",
+   "macro_f1": 0.7529558847173271
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "forest",
+   "macro_f1": 0.8484512738544997
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "quantum committee",
+   "macro_f1": 0.8005787797282468
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "matched control",
+   "macro_f1": 0.753266257799869
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "quantum committee alarm",
+   "flagged": 0.37333333333333335,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "missing": 2,
+   "draw": 16,
+   "model": "matched control alarm",
+   "flagged": 0.24,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "quantum SVM",
+   "macro_f1": 0.6924644945697578
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "poly SVM",
+   "macro_f1": 0.706068376068376
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "RBF SVM",
+   "macro_f1": 0.7404133346179785
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "forest",
+   "macro_f1": 0.8200376132216012
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "quantum committee",
+   "macro_f1": 0.7871983699140034
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "matched control",
+   "macro_f1": 0.7600757284045695
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "quantum committee alarm",
+   "flagged": 0.3466666666666667,
+   "undetected": 0.08
+  },
+  {
+   "missing": 2,
+   "draw": 17,
+   "model": "matched control alarm",
+   "flagged": 0.26666666666666666,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "quantum SVM",
+   "macro_f1": 0.6401732956800834
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "poly SVM",
+   "macro_f1": 0.686521287642783
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "RBF SVM",
+   "macro_f1": 0.7340495320634348
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "forest",
+   "macro_f1": 0.860264013059887
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "quantum committee",
+   "macro_f1": 0.7801311316920782
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "matched control",
+   "macro_f1": 0.7403388402395353
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "quantum committee alarm",
+   "flagged": 0.4,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 18,
+   "model": "matched control alarm",
+   "flagged": 0.3,
+   "undetected": 0.06
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "quantum SVM",
+   "macro_f1": 0.7468823363414211
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "poly SVM",
+   "macro_f1": 0.6815064169997895
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "RBF SVM",
+   "macro_f1": 0.6944462944462945
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "forest",
+   "macro_f1": 0.861284922774141
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "quantum committee",
+   "macro_f1": 0.780372630151717
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "matched control",
+   "macro_f1": 0.7279368664461833
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "quantum committee alarm",
+   "flagged": 0.35333333333333333,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 2,
+   "draw": 19,
+   "model": "matched control alarm",
+   "flagged": 0.32666666666666666,
+   "undetected": 0.06
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "quantum SVM",
+   "macro_f1": 0.5201367781155016
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "poly SVM",
+   "macro_f1": 0.545988134289475
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "RBF SVM",
+   "macro_f1": 0.6021971035971193
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "forest",
+   "macro_f1": 0.7951015531660692
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "quantum committee",
+   "macro_f1": 0.6677132391418105
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "matched control",
+   "macro_f1": 0.607775637582899
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "quantum committee alarm",
+   "flagged": 0.58,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 0,
+   "model": "matched control alarm",
+   "flagged": 0.46,
+   "undetected": 0.08
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "quantum SVM",
+   "macro_f1": 0.5258586298190259
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "poly SVM",
+   "macro_f1": 0.5186771941593974
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "RBF SVM",
+   "macro_f1": 0.5552865295306505
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "forest",
+   "macro_f1": 0.8077640720838083
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "quantum committee",
+   "macro_f1": 0.654630877508236
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "matched control",
+   "macro_f1": 0.5544217687074829
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "quantum committee alarm",
+   "flagged": 0.58,
+   "undetected": 0.06
+  },
+  {
+   "missing": 4,
+   "draw": 1,
+   "model": "matched control alarm",
+   "flagged": 0.4666666666666667,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "quantum SVM",
+   "macro_f1": 0.5810635248193065
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "poly SVM",
+   "macro_f1": 0.6232247874449709
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "RBF SVM",
+   "macro_f1": 0.6227217984745083
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "forest",
+   "macro_f1": 0.7447941222693698
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "quantum committee",
+   "macro_f1": 0.7005842336934774
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "matched control",
+   "macro_f1": 0.6404454878477538
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "quantum committee alarm",
+   "flagged": 0.47333333333333333,
+   "undetected": 0.09333333333333334
+  },
+  {
+   "missing": 4,
+   "draw": 2,
+   "model": "matched control alarm",
+   "flagged": 0.34,
+   "undetected": 0.10666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "quantum SVM",
+   "macro_f1": 0.61932261208577
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "poly SVM",
+   "macro_f1": 0.6572164948453608
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "RBF SVM",
+   "macro_f1": 0.6625507955542967
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "forest",
+   "macro_f1": 0.7877919863597613
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "quantum committee",
+   "macro_f1": 0.713233082706767
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "matched control",
+   "macro_f1": 0.6805575581830028
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "quantum committee alarm",
+   "flagged": 0.46,
+   "undetected": 0.06
+  },
+  {
+   "missing": 4,
+   "draw": 3,
+   "model": "matched control alarm",
+   "flagged": 0.36,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "quantum SVM",
+   "macro_f1": 0.5535749653396712
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "poly SVM",
+   "macro_f1": 0.5745097568009228
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "RBF SVM",
+   "macro_f1": 0.6136462407648848
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "forest",
+   "macro_f1": 0.7567981473180936
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "quantum committee",
+   "macro_f1": 0.6669671119695262
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "matched control",
+   "macro_f1": 0.6406835775841083
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "quantum committee alarm",
+   "flagged": 0.5,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 4,
+   "model": "matched control alarm",
+   "flagged": 0.41333333333333333,
+   "undetected": 0.09333333333333334
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "quantum SVM",
+   "macro_f1": 0.6018970679849681
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "poly SVM",
+   "macro_f1": 0.5601430976430977
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "RBF SVM",
+   "macro_f1": 0.6076837920117724
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "forest",
+   "macro_f1": 0.7563254014477079
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "quantum committee",
+   "macro_f1": 0.6801923076923077
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "matched control",
+   "macro_f1": 0.6476411322030042
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "quantum committee alarm",
+   "flagged": 0.5333333333333333,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 4,
+   "draw": 5,
+   "model": "matched control alarm",
+   "flagged": 0.4533333333333333,
+   "undetected": 0.09333333333333334
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "quantum SVM",
+   "macro_f1": 0.5682040503119473
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "poly SVM",
+   "macro_f1": 0.5928833071690215
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "RBF SVM",
+   "macro_f1": 0.6044356609574001
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "forest",
+   "macro_f1": 0.7698439647505863
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "quantum committee",
+   "macro_f1": 0.673611111111111
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "matched control",
+   "macro_f1": 0.6330254901683473
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "quantum committee alarm",
+   "flagged": 0.4866666666666667,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 6,
+   "model": "matched control alarm",
+   "flagged": 0.3933333333333333,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "quantum SVM",
+   "macro_f1": 0.5757795025197402
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "poly SVM",
+   "macro_f1": 0.6207314609011921
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "RBF SVM",
+   "macro_f1": 0.7025089605734767
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "forest",
+   "macro_f1": 0.7752563226247436
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "quantum committee",
+   "macro_f1": 0.7139948495090939
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "matched control",
+   "macro_f1": 0.728530694116455
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "quantum committee alarm",
+   "flagged": 0.5133333333333333,
+   "undetected": 0.03333333333333333
+  },
+  {
+   "missing": 4,
+   "draw": 7,
+   "model": "matched control alarm",
+   "flagged": 0.44,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "quantum SVM",
+   "macro_f1": 0.6146408505279473
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "poly SVM",
+   "macro_f1": 0.5703795399532038
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "RBF SVM",
+   "macro_f1": 0.5627156659765356
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "forest",
+   "macro_f1": 0.7897195421378428
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "quantum committee",
+   "macro_f1": 0.6459696362608983
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "matched control",
+   "macro_f1": 0.6205293998787634
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "quantum committee alarm",
+   "flagged": 0.5066666666666667,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 8,
+   "model": "matched control alarm",
+   "flagged": 0.4266666666666667,
+   "undetected": 0.1
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "quantum SVM",
+   "macro_f1": 0.5402359957713859
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "poly SVM",
+   "macro_f1": 0.5418041267829187
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "RBF SVM",
+   "macro_f1": 0.5919113361869738
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "forest",
+   "macro_f1": 0.7565400607857397
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "quantum committee",
+   "macro_f1": 0.6320320159544388
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "matched control",
+   "macro_f1": 0.6276791445287953
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "quantum committee alarm",
+   "flagged": 0.5333333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 9,
+   "model": "matched control alarm",
+   "flagged": 0.47333333333333333,
+   "undetected": 0.08
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "quantum SVM",
+   "macro_f1": 0.5204451345755694
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "poly SVM",
+   "macro_f1": 0.5916774569880672
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "RBF SVM",
+   "macro_f1": 0.6674723424723426
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "forest",
+   "macro_f1": 0.7769230353095194
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "quantum committee",
+   "macro_f1": 0.6735915556382807
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "matched control",
+   "macro_f1": 0.6668454574141122
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "quantum committee alarm",
+   "flagged": 0.5,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 10,
+   "model": "matched control alarm",
+   "flagged": 0.4266666666666667,
+   "undetected": 0.05333333333333334
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "quantum SVM",
+   "macro_f1": 0.5069444444444444
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "poly SVM",
+   "macro_f1": 0.5184458398744113
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "RBF SVM",
+   "macro_f1": 0.5412052390044552
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "forest",
+   "macro_f1": 0.787042885515695
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "quantum committee",
+   "macro_f1": 0.6003232976358861
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "matched control",
+   "macro_f1": 0.5725294310773417
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "quantum committee alarm",
+   "flagged": 0.5333333333333333,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 4,
+   "draw": 11,
+   "model": "matched control alarm",
+   "flagged": 0.4533333333333333,
+   "undetected": 0.11333333333333333
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "quantum SVM",
+   "macro_f1": 0.5389258312020461
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "poly SVM",
+   "macro_f1": 0.5195826163404684
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "RBF SVM",
+   "macro_f1": 0.5259069737468138
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "forest",
+   "macro_f1": 0.8017088447195974
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "quantum committee",
+   "macro_f1": 0.6306176962735934
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "matched control",
+   "macro_f1": 0.5730343173952196
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "quantum committee alarm",
+   "flagged": 0.5333333333333333,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 12,
+   "model": "matched control alarm",
+   "flagged": 0.49333333333333335,
+   "undetected": 0.08
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "quantum SVM",
+   "macro_f1": 0.5876000842815002
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "poly SVM",
+   "macro_f1": 0.5325067958633003
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "RBF SVM",
+   "macro_f1": 0.5517173746166045
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "forest",
+   "macro_f1": 0.7769191054590907
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "quantum committee",
+   "macro_f1": 0.6548665591257794
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "matched control",
+   "macro_f1": 0.6010359231411864
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "quantum committee alarm",
+   "flagged": 0.5666666666666667,
+   "undetected": 0.04666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 13,
+   "model": "matched control alarm",
+   "flagged": 0.49333333333333335,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "quantum SVM",
+   "macro_f1": 0.5879354142392673
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "poly SVM",
+   "macro_f1": 0.6323707157040491
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "RBF SVM",
+   "macro_f1": 0.6010080996150362
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "forest",
+   "macro_f1": 0.7969434700411981
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "quantum committee",
+   "macro_f1": 0.68013468013468
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "matched control",
+   "macro_f1": 0.6739269557541653
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "quantum committee alarm",
+   "flagged": 0.5333333333333333,
+   "undetected": 0.04
+  },
+  {
+   "missing": 4,
+   "draw": 14,
+   "model": "matched control alarm",
+   "flagged": 0.4266666666666667,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "quantum SVM",
+   "macro_f1": 0.5387756216053932
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "poly SVM",
+   "macro_f1": 0.5673326237069789
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "RBF SVM",
+   "macro_f1": 0.5867116706197165
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "forest",
+   "macro_f1": 0.7614954767648019
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "quantum committee",
+   "macro_f1": 0.6605585772252439
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "matched control",
+   "macro_f1": 0.6069716775599128
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "quantum committee alarm",
+   "flagged": 0.5666666666666667,
+   "undetected": 0.06666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 15,
+   "model": "matched control alarm",
+   "flagged": 0.44,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "quantum SVM",
+   "macro_f1": 0.6047970166963302
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "poly SVM",
+   "macro_f1": 0.5827829035089483
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "RBF SVM",
+   "macro_f1": 0.6401143790849674
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "forest",
+   "macro_f1": 0.7678811637649411
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "quantum committee",
+   "macro_f1": 0.6921102461603198
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "matched control",
+   "macro_f1": 0.6737296900543823
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "quantum committee alarm",
+   "flagged": 0.49333333333333335,
+   "undetected": 0.07333333333333333
+  },
+  {
+   "missing": 4,
+   "draw": 16,
+   "model": "matched control alarm",
+   "flagged": 0.4,
+   "undetected": 0.1
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "quantum SVM",
+   "macro_f1": 0.5329537612146308
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "poly SVM",
+   "macro_f1": 0.5356634572608193
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "RBF SVM",
+   "macro_f1": 0.6012670360240316
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "forest",
+   "macro_f1": 0.7887931034482758
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "quantum committee",
+   "macro_f1": 0.6541889483065954
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "matched control",
+   "macro_f1": 0.6274024853941705
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "quantum committee alarm",
+   "flagged": 0.5266666666666666,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 17,
+   "model": "matched control alarm",
+   "flagged": 0.4666666666666667,
+   "undetected": 0.08666666666666667
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "quantum SVM",
+   "macro_f1": 0.5933678319288239
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "poly SVM",
+   "macro_f1": 0.6394014613151837
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "RBF SVM",
+   "macro_f1": 0.6722569410539335
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "forest",
+   "macro_f1": 0.783576460542233
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "quantum committee",
+   "macro_f1": 0.6931615161757606
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "matched control",
+   "macro_f1": 0.6855362131957876
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "quantum committee alarm",
+   "flagged": 0.43333333333333335,
+   "undetected": 0.08
+  },
+  {
+   "missing": 4,
+   "draw": 18,
+   "model": "matched control alarm",
+   "flagged": 0.36666666666666664,
+   "undetected": 0.08
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "quantum SVM",
+   "macro_f1": 0.5676822615838788
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "poly SVM",
+   "macro_f1": 0.52
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "RBF SVM",
+   "macro_f1": 0.5814279287963499
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "forest",
+   "macro_f1": 0.762560892715532
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "quantum committee",
+   "macro_f1": 0.6537602607436022
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "matched control",
+   "macro_f1": 0.5875911030550206
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "quantum committee alarm",
+   "flagged": 0.5333333333333333,
+   "undetected": 0.06
+  },
+  {
+   "missing": 4,
+   "draw": 19,
+   "model": "matched control alarm",
+   "flagged": 0.4266666666666667,
+   "undetected": 0.12
+  }
+ ],
+ "bootstrap": [
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "first": "+ poly SVM",
+   "second": "+ quantum SVM",
+   "statistic": "rate",
+   "delta": -0.03111111111111113,
+   "ci95": [
+    -0.09353080035971222,
+    0.01667134831460671
+   ],
+   "share_positive": 0.0995,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "first": "+ poly SVM",
+   "second": "+ quantum SVM",
+   "statistic": "rate",
+   "delta": -0.03111111111111109,
+   "ci95": [
+    -0.08444685990338163,
+    0.016132310516653522
+   ],
+   "share_positive": 0.084,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "first": "+ poly SVM",
+   "second": "+ quantum SVM",
+   "statistic": "rate",
+   "delta": -0.04222222222222227,
+   "ci95": [
+    -0.13213461395279574,
+    0.025137343036529525
+   ],
+   "share_positive": 0.114,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "first": "+ poly SVM",
+   "second": "+ quantum SVM",
+   "statistic": "rate",
+   "delta": -0.10222222222222221,
+   "ci95": [
+    -0.16904281164844534,
+    -0.04565898146068818
+   ],
+   "share_positive": 0.0005,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.05,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.03555555555555556,
+   "ci95": [
+    -0.08649823736780254,
+    0.00599457335329337
+   ],
+   "share_positive": 0.0435,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.1,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.01999999999999999,
+   "ci95": [
+    -0.04959382659812152,
+    -0.002347417840375579
+   ],
+   "share_positive": 0.0,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.2,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.004444444444444473,
+   "ci95": [
+    -0.015723889466646827,
+    0.005090037189273815
+   ],
+   "share_positive": 0.135,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "naive",
+   "eps": 0.5,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.04222222222222222,
+   "ci95": [
+    -0.09415238369580874,
+    -0.004783785874526251
+   ],
+   "share_positive": 0.0115,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.05,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.037777777777777785,
+   "ci95": [
+    -0.09092942851332113,
+    0.005593986197831041
+   ],
+   "share_positive": 0.0295,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.1,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.006666666666666682,
+   "ci95": [
+    -0.025423728813559324,
+    0.0
+   ],
+   "share_positive": 0.0,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.2,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.006666666666666654,
+   "ci95": [
+    -0.024333738848337415,
+    0.014035087719298261
+   ],
+   "share_positive": 0.188,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  },
+  {
+   "attack": "adaptive",
+   "eps": 0.5,
+   "first": "matched control",
+   "second": "quantum committee",
+   "statistic": "rate",
+   "delta": -0.0444444444444444,
+   "ci95": [
+    -0.0814301293036299,
+    -0.01608181203515896
+   ],
+   "share_positive": 0.001,
+   "resamples": 2000,
+   "method": "paired spatial-block bootstrap (data/validation_groups.json), seed 2026"
+  }
+ ],
+ "seconds": 377.15380529699905
+}
