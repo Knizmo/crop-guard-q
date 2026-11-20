@@ -207,9 +207,9 @@ class Console(tk.Tk):
                                                    'hardware_robustness.json', 'tuning_log.json', 'main_results.json']}
         log('[ OK ] saved studies loaded: ' + (', '.join(k for k, v in d['studies'].items() if v) or 'none yet'))
         lab, main = d['studies']['attack_lab.json'], d['studies']['main_results.json']
-        d['finding'] = [f"Clean data, quantum vs classical partner: {report.clean_section(main)[1]}." if main
+        d['finding'] = [f"Données propres, partenaire quantique vs classique : {report.clean_section(main)[1]}." if main
                         else 'Run the notebook for the clean comparison.',
-                        f"Tampering: the {report.tamper_section(lab)[1].removeprefix('+ ')} partner protects most." if lab
+                        f"Falsification : le partenaire qui protège le plus est {report.nom(report.tamper_section(lab)[1].removeprefix('+ '))}." if lab
                         else 'Run the notebook for the attack study.']
         return d
 

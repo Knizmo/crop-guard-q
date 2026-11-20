@@ -22,8 +22,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.017686132,
-      "predict_seconds": 0.002369082,
+      "fit_seconds": 0.057021617,
+      "predict_seconds": 0.007226491,
       "flagged": null,
       "accuracy_unflagged": null,
       "recall_alfalfa": 0.94,
@@ -55,8 +55,8 @@
           43
         ]
       ],
-      "fit_seconds": 0.922217893,
-      "predict_seconds": 0.073738852,
+      "fit_seconds": 1.469160636,
+      "predict_seconds": 0.072498872,
       "flagged": 0.0866666667,
       "accuracy_unflagged": 0.9635036496,
       "recall_alfalfa": 0.94,
@@ -88,7 +88,7 @@
           45
         ]
       ],
-      "fit_seconds": 0.124916512,
+      "fit_seconds": 0.155239633,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -121,7 +121,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.039052946,
+      "fit_seconds": 0.037340052,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -154,7 +154,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.754040204,
+      "fit_seconds": 1.267883491,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -187,8 +187,8 @@
           44
         ]
       ],
-      "fit_seconds": 0.702365778,
-      "predict_seconds": 0.028839517,
+      "fit_seconds": 1.102965744,
+      "predict_seconds": 0.046028838,
       "flagged": 0.08,
       "accuracy_unflagged": 0.9637681159,
       "recall_alfalfa": 0.94,
@@ -220,7 +220,7 @@
           46
         ]
       ],
-      "fit_seconds": 0.037866746,
+      "fit_seconds": 0.044497651,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -253,8 +253,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.017686132,
-      "predict_seconds": 0.002369082,
+      "fit_seconds": 0.057021617,
+      "predict_seconds": 0.007226491,
       "flagged": null,
       "accuracy_unflagged": null,
       "recall_alfalfa": 0.94,
@@ -286,8 +286,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.750505675,
-      "predict_seconds": 0.110834292,
+      "fit_seconds": 1.285273153,
+      "predict_seconds": 0.070654248,
       "flagged": 0.0933333333,
       "accuracy_unflagged": 0.9632352941,
       "recall_alfalfa": 0.94,
@@ -319,7 +319,7 @@
           45
         ]
       ],
-      "fit_seconds": 0.087948395,
+      "fit_seconds": 0.155684832,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -352,7 +352,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.024741432,
+      "fit_seconds": 0.032131524,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -385,7 +385,7 @@
           42
         ]
       ],
-      "fit_seconds": 0.634649253,
+      "fit_seconds": 1.08919643,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -418,8 +418,8 @@
           43
         ]
       ],
-      "fit_seconds": 0.725577609,
-      "predict_seconds": 0.031117029,
+      "fit_seconds": 1.180103458,
+      "predict_seconds": 0.088489821,
       "flagged": 0.0866666667,
       "accuracy_unflagged": 0.9635036496,
       "recall_alfalfa": 0.94,
@@ -451,7 +451,7 @@
           46
         ]
       ],
-      "fit_seconds": 0.026098727,
+      "fit_seconds": 0.033958215,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -484,8 +484,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.017686132,
-      "predict_seconds": 0.002369082,
+      "fit_seconds": 0.057021617,
+      "predict_seconds": 0.007226491,
       "flagged": null,
       "accuracy_unflagged": null,
       "recall_alfalfa": 0.94,
@@ -517,8 +517,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.750833504,
-      "predict_seconds": 0.062282332,
+      "fit_seconds": 1.268429222,
+      "predict_seconds": 0.072553806,
       "flagged": 0.0933333333,
       "accuracy_unflagged": 0.9632352941,
       "recall_alfalfa": 0.94,
@@ -550,7 +550,7 @@
           45
         ]
       ],
-      "fit_seconds": 0.090138198,
+      "fit_seconds": 0.122697116,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -583,7 +583,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.024248734,
+      "fit_seconds": 0.033357485,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -616,7 +616,7 @@
           42
         ]
       ],
-      "fit_seconds": 0.633284791,
+      "fit_seconds": 1.105740245,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -649,8 +649,8 @@
           43
         ]
       ],
-      "fit_seconds": 0.679497183,
-      "predict_seconds": 0.029491942,
+      "fit_seconds": 1.325336207,
+      "predict_seconds": 0.062616355,
       "flagged": 0.0866666667,
       "accuracy_unflagged": 0.9635036496,
       "recall_alfalfa": 0.94,
@@ -682,7 +682,7 @@
           46
         ]
       ],
-      "fit_seconds": 0.028403016,
+      "fit_seconds": 0.035199487,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -766,11 +766,11 @@
       "inputs": "13 raw features -> 8 train-fitted PCA numbers",
       "preprocessing_fitted_values": 159,
       "fit_seconds": {
-        "preprocessing": 0.004009307998785516,
-        "quantum": 0.1249165119988902,
-        "rbf": 0.03905294599826448,
-        "forest": 0.754040203999466,
-        "total": 0.9220605400005297
+        "preprocessing": 0.008314473998325411,
+        "quantum": 0.15523963300074684,
+        "rbf": 0.03734005200385582,
+        "forest": 1.2678834910038859,
+        "total": 1.4688501740020001
       },
       "members": {
         "quantum": {
@@ -814,11 +814,11 @@
       "inputs": "13 raw features -> 8 train-fitted PCA numbers",
       "preprocessing_fitted_values": 159,
       "fit_seconds": {
-        "preprocessing": 0.006151535002572928,
-        "poly": 0.03786674599905382,
-        "rbf": 0.03313967099893489,
-        "forest": 0.6248019489976286,
-        "total": 0.702007040999888
+        "preprocessing": 0.00890592799987644,
+        "poly": 0.044497650997072924,
+        "rbf": 0.034344333995250054,
+        "forest": 1.0147823730003438,
+        "total": 1.1025915169957443
       },
       "members": {
         "poly": {
@@ -912,5 +912,5 @@
       "stretch by 2nd scaler (vs PC1)": 22.8
     }
   },
-  "main_run_seconds": 40.14341595899896
+  "main_run_seconds": 66.62857624000026
 }

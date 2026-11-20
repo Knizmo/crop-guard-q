@@ -1,7 +1,7 @@
 {
   "quantum": {
     "configurations": 30,
-    "seconds": 2.9182430959990597,
+    "seconds": 4.136545562003448,
     "best_validation_macro_f1": 0.91999533286662,
     "rows": [
       {
@@ -158,7 +158,7 @@
   },
   "poly": {
     "configurations": 30,
-    "seconds": 1.0097421249993204,
+    "seconds": 1.6447934989992063,
     "best_validation_macro_f1": 0.9269162210338681,
     "rows": [
       {
@@ -345,7 +345,7 @@
   },
   "rbf": {
     "configurations": 30,
-    "seconds": 0.9278735240004607,
+    "seconds": 1.781013849998999,
     "best_validation_macro_f1": 0.9325948978392985,
     "rows": [
       {
@@ -502,7 +502,7 @@
   },
   "forest": {
     "configurations": 30,
-    "seconds": 26.15878094800064,
+    "seconds": 43.222811856998305,
     "best_validation_macro_f1": 0.9129790530073416,
     "rows": [
       {
