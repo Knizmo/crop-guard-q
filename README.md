@@ -8,9 +8,13 @@ Entry for the *Moroccan Crop Classification Challenge* (Qiskit Fall Fest, EMSI �
 
 Quantum computing (an 8-qubit kernel, exact simulation and two real IBM jobs), cybersecurity (an attack lab and a tamper alarm) and a bit of AI (the error-fixer, plus an optional analyst that writes incident notes). Project plan: [docs/PROJECT_SUMMARY.md](docs/PROJECT_SUMMARY.md).
 
+**Guide d'usage (français) : [docs/GUIDE.md](docs/GUIDE.md)** — installation, settings, console, notebook, and every function you need to use and understand.
+
+No value is hard-coded: dataset facts come from `data/manifest.json`, study parameters from [`configs/experiment.json`](configs/experiment.json), selected settings from [`configs/cropguard.json`](configs/cropguard.json), and the simulated device from real IBM calibration data. `python -m challenge.report` rewrites the findings from the saved results.
+
 ## Results at a glance
 
-All numbers come from [`notebooks/CropGuard_Q.ipynb`](notebooks/CropGuard_Q.ipynb) and the files in [`outputs/`](outputs/). Validation, 150 fields, seeds 0/1/2; settings were chosen on the same validation set, so scores are optimistic for every model alike.
+All numbers come from [`notebooks/CropGuard_Q.ipynb`](notebooks/CropGuard_Q.ipynb) and the files in [`outputs/`](outputs/); this table is a snapshot, and `python -m challenge.report` prints the current findings from the saved results. Validation, 150 fields, seeds 0/1/2; settings were chosen on the same validation set, so scores are optimistic for every model alike.
 
 | Model | Validation macro-F1 | Accuracy | Flags a human | Right when not flagged |
 | --- | --- | --- | --- | --- |
@@ -21,9 +25,9 @@ All numbers come from [`notebooks/CropGuard_Q.ipynb`](notebooks/CropGuard_Q.ipyn
 
 - **Clean data:** quantum committee minus matched control = −0.0004, 95% interval [−0.019, +0.024] (paired spatial-block bootstrap, 18 blocks, 2,000 resamples). No detectable difference. Both committees beat the reference by about 0.04, an interval that just touches zero.
 - **Tampering (the 13 raw bands are edited; the attacker aims at the RBF SVM):** a total change of only 0.1 training SDs fools the RBF SVM silently on 24.9% of fields. With the full committee, 12.7% slip through (quantum) vs 14.7% (matched control). The quantum committee also flags more fields (19.1% vs 13.6%). Bootstrap: −2.0 points [−5.0, −0.2] at ε = 0.1, but no detectable difference at ε = 0.05 or 0.2. The partner that matters most is classical: at ε = 0.2 the forest cuts slips from 49% to 20%, the quantum SVM to 36%, the poly SVM to 40%. An attacker who knows all three still gets 50–55% through at ε = 0.5. Alone, the quantum SVM is not more robust: it degrades most with poisoned labels (0.78 at 30%, poly 0.85) and missing bands.
-- **Noise + AI error-fixer (simulated device):** a one-line linear regression cuts similarity error from 0.100 to 0.013 (1× noise) and from 0.213 to 0.024 (3×), beating zero-noise extrapolation (0.058 / 0.175), which also costs twice the circuits. Not shown to improve final accuracy.
+- **Noise + AI error-fixer (simulated device built from real `ibm_fez` calibration: median errors, gate times, readout, T1/T2):** a one-line linear regression cuts the similarity error from 0.052 to 0.011 at the device's own noise and from 0.131 to 0.015 at 3×, beating zero-noise extrapolation (0.032 / 0.094), which also costs twice the circuits. Realism check: the real `ibm_fez` job measured 0.073 raw, a bit worse than the median model predicts (per-qubit spread, crosstalk, drift). Not shown to improve final accuracy.
 - **IBM hardware (inference only):**
-  - `ibm_fez`, job `dc01nteq4uuc73a1tkq0`, submitted model (C = 100): the error-fixer, fitted on calibration pairs in the same job, cut kernel error from 0.073 to 0.018, yet only 1 of 4 quantum votes matched the exact simulator. Why: large C means large SVM weights, and they amplify small kernel errors. In simulation, 512-shot noise alone keeps only 48% of this model's votes.
+  - `ibm_fez`, job `dc01nteq4uuc73a1tkq0`, submitted model (C = 100): the error-fixer, fitted on calibration pairs in the same job, cut kernel error from 0.073 to 0.018, yet only 1 of 4 quantum votes matched the exact simulator. Why: large C means large SVM weights, and they amplify small kernel errors. In simulation, 512-shot noise alone keeps only 49% of this model's votes.
   - `ibm_marrakesh`, job `dc01qrts2omc7388k9h0`, hardware-ready variant (C = 1, chosen offline as the largest C keeping ≥ 95% of votes under the measured error): **4 of 4 quantum votes matched**. On the tampered field, the raw hardware vote was wrong and the error-fixer brought it back, so the alarm fires on real hardware. One small inference example, not an accuracy estimate.
 
 **What we do not claim:** no quantum advantage of any kind; the quantum model is not more robust than a classical one; the alarm does not stop an attacker who knows the defence; the error-fixer is not shown to improve accuracy; hardware runs are demos, not accuracy estimates.
@@ -37,7 +41,7 @@ All numbers come from [`notebooks/CropGuard_Q.ipynb`](notebooks/CropGuard_Q.ipyn
 | Vote + tamper alarm | majority label (RBF SVM settles a three-way split); flag when not unanimous ([`challenge/submission.py`](challenge/submission.py)) |
 | Matched control | same pipeline, quantum SVM replaced by a polynomial SVM; every inspector tuned with the same 30-configuration grid ([`challenge/tune.py`](challenge/tune.py)) |
 | Attack lab | raw-band tampering (naive and adaptive attackers), poisoned labels, missing bands, paired bootstrap ([`challenge/guard.py`](challenge/guard.py)) |
-| AI error-fixer | linear regression noisy → exact kernel value; noisy-simulator study ([`challenge/mitigation.py`](challenge/mitigation.py)) |
+| AI error-fixer | linear regression noisy → exact kernel value; noisy-simulator study on a device built from real IBM calibration data ([`challenge/mitigation.py`](challenge/mitigation.py)) |
 | IBM hardware | inference-only kernel circuits against the support vectors, with in-job calibration ([`challenge/hardware_kernel.py`](challenge/hardware_kernel.py)) |
 | Console app | futuristic tkinter front-end: field scanner, tamper injector, kernel knob, attack lab, noise and QPU views ([`cropguard_app.py`](cropguard_app.py)) |
 | AI analyst (optional) | writes a plain-text incident note for a flagged field; explains, never decides ([`challenge/analyst.py`](challenge/analyst.py)) |
@@ -56,6 +60,7 @@ python3.12 -m venv .venv
 | Goal | Command | Time on an 8-core laptop |
 | --- | --- | --- |
 | Self-checks | `.venv/bin/python -m tests.test_cropguard` | ~10 s |
+| Findings from the saved results | `.venv/bin/python -m challenge.report` | ~5 s |
 | Re-tune (writes `configs/cropguard.json`) | `.venv/bin/python -m challenge.tune` | ~1 min |
 | **Main notebook** (results, controls, extras) | `.venv/bin/jupyter nbconvert --to notebook --execute --inplace notebooks/CropGuard_Q.ipynb` | ~11 min (main run ~1 min) |
 | **Console app** | `.venv/bin/python cropguard_app.py` | ~5 s to boot |
@@ -76,8 +81,8 @@ The main run (notebook sections 1–4) needs no optional package, no network and
 
 ## Layout
 
-- `challenge/`: organizers' starter (`data.py`, `models.py`, `classical.py`, `metrics.py`, `coverage.py`, `hardware.py`) plus our modules listed above; `submission.py` is now the CropGuard-Q committee.
-- `configs/cropguard.json`: frozen settings; `outputs/tuning_log.json`: every configuration tried.
+- `challenge/`: organizers' starter (`data.py`, `models.py`, `classical.py`, `metrics.py`, `coverage.py`, `hardware.py`) plus our modules listed above, `config.py` (reads the settings files) and `report.py` (writes the findings from the results); `submission.py` is now the CropGuard-Q committee.
+- `configs/experiment.json`: study parameters; `configs/cropguard.json`: frozen settings; `outputs/tuning_log.json`: every configuration tried; `outputs/device_profile.json`: real IBM calibration used by the noise study.
 - `notebooks/CropGuard_Q.ipynb`: the deliverable notebook (executed, with outputs). The starter notebook is unchanged.
 - `outputs/`: `main_results.json`, `attack_lab.json`, `noise_study.json`, `hardware_result.json`, `hardware_result_robust.json`, `hardware_robustness.json`, figures `cg_*.png`, and `predictions/` (validation predictions in the reference format; test predictions with flag and per-inspector votes; `quantum_committee_0_test.csv` is the submission file).
 - `tests/test_cropguard.py`: self-checks. `cropguard_app.py`: console. `demo.py`: the original walkthrough.

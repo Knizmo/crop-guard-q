@@ -1,15 +1,17 @@
 """Attack lab and tamper alarm (additional analysis). Every attack works on copies of the data.
 
-Tampering perturbs the 13 raw measurements, not the 8 PCA numbers, and the change passes through the
+Tampering perturbs the raw measurements, not the PCA numbers, and the change passes through the
 training-fitted preprocessing like a real edited record would. The budget `eps` is an L2 norm in
 training-standardized band units (one unit = one training standard deviation of that band), and each
 band stays inside the training range (or the field's own value), so a tampered field stays plausible.
 The attack is a gradient-free random search: a weak attacker, so measured damage is a lower bound.
+Default budgets, step counts and draws come from configs/experiment.json ("attack", "bootstrap", "seeds").
 """
 import json
 
 import numpy as np
 
+from .config import EXPERIMENT
 from .coverage import metric_vector
 from .data import ROOT
 from .metrics import score
@@ -39,12 +41,14 @@ def member_margin(committee, slot):
 
 def committee_margin(committee, X0, yi):
     """Adaptive attacker: knows all three inspectors and pushes down the largest (scale-normalized) margin."""
-    fns = [member_margin(committee, s) for s in range(3)]
-    scale = [np.median(np.abs(f(X0, yi))) for f in fns]
-    return lambda X, yi: np.max([f(X, yi) / s for f, s in zip(fns, scale)], axis=0)
+    def margins(X, yi):
+        Z = committee.transform(X)  # preprocess once per step, shared by the three inspectors
+        return np.array([margin(scores(model, Z), yi) for model in committee.members])
+    scale = np.median(np.abs(margins(X0, yi)), axis=1)[:, None]
+    return lambda X, yi: (margins(X, yi) / scale).max(axis=0)
 
 
-def tamper(margin_fn, X, yi, eps, X_train, iters=150, seed=0):
+def tamper(margin_fn, X, yi, eps, X_train, iters=EXPERIMENT['attack']['iters'], seed=0):
     """Random search for a per-field change with standardized L2 norm <= eps that lowers margin_fn."""
     rng = np.random.default_rng(seed)
     sd = X_train.std(axis=0)
@@ -74,7 +78,7 @@ def alarm_views(sub, ctrl, X, y):
     return {name: slips(V, y) for name, V in views.items()}, q, c
 
 
-def tamper_study(X, y, Xv, yv, eps_list=(0.05, 0.1, 0.2, 0.5), seeds=(0, 1, 2), iters=150, adaptive=True):
+def tamper_study(X, y, Xv, yv, eps_list=EXPERIMENT['attack']['eps'], seeds=EXPERIMENT['seeds'], iters=EXPERIMENT['attack']['iters'], adaptive=True):
     """Naive attacker (aims at the shared RBF SVM) and adaptive attacker (knows the whole committee).
     Returns summary rows and per-field 'undetected' outcomes for the paired bootstrap."""
     yi, rows, fields = index(yv), [], {}
@@ -103,7 +107,7 @@ def tamper_study(X, y, Xv, yv, eps_list=(0.05, 0.1, 0.2, 0.5), seeds=(0, 1, 2), 
     return rows, fields
 
 
-def poison_study(X, y, Xv, yv, rates=(0.1, 0.2, 0.3), draws=5):
+def poison_study(X, y, Xv, yv, rates=EXPERIMENT['attack']['poison_rates'], draws=EXPERIMENT['attack']['poison_draws']):
     """Flip a fraction of training labels to another crop at random, retrain everything, score on clean validation."""
     rows = []
     for rate in rates:
@@ -112,13 +116,13 @@ def poison_study(X, y, Xv, yv, rates=(0.1, 0.2, 0.3), draws=5):
             yp = np.array(y, dtype=object)
             hit = rng.choice(len(y), int(rate * len(y)), replace=False)
             yp[hit] = [rng.choice([l for l in LABELS if l != old]) for old in yp[hit]]
-            sub, ctrl = committees(X, yp.astype(str), seed=draw % 3)
+            sub, ctrl = committees(X, yp.astype(str), seed=EXPERIMENT['seeds'][draw % len(EXPERIMENT['seeds'])])
             rows += f1_rows(sub, ctrl, Xv, yv, dict(rate=rate, draw=draw))
     return rows
 
 
-def missing_study(sub, ctrl, X_train, Xv, yv, ks=(1, 2, 4), draws=20):
-    """k of 13 bands lost per field and imputed with the training mean, at prediction time only."""
+def missing_study(sub, ctrl, X_train, Xv, yv, ks=EXPERIMENT['attack']['missing_bands'], draws=EXPERIMENT['attack']['missing_draws']):
+    """k bands lost per field and imputed with the training mean, at prediction time only."""
     rows, mean = [], X_train.mean(axis=0)
     for k in ks:
         for draw in range(draws):
@@ -141,7 +145,7 @@ def f1_rows(sub, ctrl, X, y, tags, alarm=False):
     return rows
 
 
-def block_weights(sample_ids, samples=2000, seed=2026):
+def block_weights(sample_ids, samples=EXPERIMENT['bootstrap']['samples'], seed=EXPERIMENT['bootstrap']['seed']):
     """Spatial-block bootstrap weights over validation fields (same scheme as challenge/coverage.py)."""
     groups = json.loads((ROOT / 'data/validation_groups.json').read_text())
     unique, idx = np.unique([groups[s] for s in sample_ids], return_inverse=True)
@@ -161,4 +165,4 @@ def paired_bootstrap(a, b, y, weights, stat='macro_f1'):
     lo, hi = np.quantile(boot, [0.025, 0.975])
     return dict(statistic=stat, delta=f(b, np.ones(len(y))) - f(a, np.ones(len(y))), ci95=[float(lo), float(hi)],
                 share_positive=float((boot > 0).mean()), resamples=len(weights),
-                method='paired spatial-block bootstrap (data/validation_groups.json), seed 2026')
+                method=f"paired spatial-block bootstrap (data/validation_groups.json), seed {EXPERIMENT['bootstrap']['seed']}")

@@ -1,222 +1,4 @@
 {
-  "summary": {
-    "('macro_f1', 'mean')": {
-      "quantum committee": 0.9213783655,
-      "matched control": 0.9217869176,
-      "reference": 0.8797397658,
-      "quantum SVM": 0.9199953329,
-      "poly SVM": 0.926916221,
-      "RBF SVM": 0.9325948978,
-      "forest": 0.9040417399
-    },
-    "('macro_f1', 'sd')": {
-      "quantum committee": 0.0032639146,
-      "matched control": 0.0032495209,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 0.0,
-      "forest": 0.0063196351
-    },
-    "('accuracy', 'mean')": {
-      "quantum committee": 0.9222222222,
-      "matched control": 0.9222222222,
-      "reference": 0.88,
-      "quantum SVM": 0.92,
-      "poly SVM": 0.9266666667,
-      "RBF SVM": 0.9333333333,
-      "forest": 0.9044444444
-    },
-    "('accuracy', 'sd')": {
-      "quantum committee": 0.0031426968,
-      "matched control": 0.0031426968,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 1.110223025e-16,
-      "forest": 0.0062853936
-    },
-    "('recall_alfalfa', 'mean')": {
-      "quantum committee": 0.94,
-      "matched control": 0.94,
-      "reference": 0.94,
-      "quantum SVM": 0.94,
-      "poly SVM": 0.94,
-      "RBF SVM": 0.96,
-      "forest": 0.9333333333
-    },
-    "('recall_alfalfa', 'sd')": {
-      "quantum committee": 0.0,
-      "matched control": 0.0,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 0.0,
-      "forest": 0.0094280904
-    },
-    "('recall_maize', 'mean')": {
-      "quantum committee": 0.98,
-      "matched control": 0.96,
-      "reference": 0.86,
-      "quantum SVM": 0.92,
-      "poly SVM": 0.92,
-      "RBF SVM": 0.98,
-      "forest": 0.9333333333
-    },
-    "('recall_maize', 'sd')": {
-      "quantum committee": 0.0,
-      "matched control": 0.0,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 0.0,
-      "forest": 0.0094280904
-    },
-    "('recall_wheat', 'mean')": {
-      "quantum committee": 0.8466666667,
-      "matched control": 0.8666666667,
-      "reference": 0.84,
-      "quantum SVM": 0.9,
-      "poly SVM": 0.92,
-      "RBF SVM": 0.86,
-      "forest": 0.8466666667
-    },
-    "('recall_wheat', 'sd')": {
-      "quantum committee": 0.0094280904,
-      "matched control": 0.0094280904,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 0.0,
-      "forest": 0.0094280904
-    },
-    "('precision_alfalfa', 'mean')": {
-      "quantum committee": 0.9215686275,
-      "matched control": 0.9215686275,
-      "reference": 0.8867924528,
-      "quantum SVM": 0.9215686275,
-      "poly SVM": 0.9591836735,
-      "RBF SVM": 0.9411764706,
-      "forest": 0.9210457516
-    },
-    "('precision_alfalfa', 'sd')": {
-      "quantum committee": 0.0,
-      "matched control": 0.0,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 1.110223025e-16,
-      "forest": 0.0007394581
-    },
-    "('precision_maize', 'mean')": {
-      "quantum committee": 0.9131143722,
-      "matched control": 0.9291101056,
-      "reference": 0.914893617,
-      "quantum SVM": 0.9387755102,
-      "poly SVM": 0.9387755102,
-      "RBF SVM": 0.9245283019,
-      "forest": 0.9091251885
-    },
-    "('precision_maize', 'sd')": {
-      "quantum committee": 0.0080708671,
-      "matched control": 0.0085322085,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 0.0,
-      "forest": 0.0088324415
-    },
-    "('precision_wheat', 'mean')": {
-      "quantum committee": 0.9338164251,
-      "matched control": 0.9154846336,
-      "reference": 0.84,
-      "quantum SVM": 0.9,
-      "poly SVM": 0.8846153846,
-      "RBF SVM": 0.9347826087,
-      "forest": 0.8819444444
-    },
-    "('precision_wheat', 'sd')": {
-      "quantum committee": 0.000683195,
-      "matched control": 0.0008358236,
-      "reference": 0.0,
-      "quantum SVM": 0.0,
-      "poly SVM": 0.0,
-      "RBF SVM": 0.0,
-      "forest": 0.0098209275
-    },
-    "('flagged', 'mean')": {
-      "quantum committee": 0.0911111111,
-      "matched control": 0.0844444444,
-      "reference": null,
-      "quantum SVM": null,
-      "poly SVM": null,
-      "RBF SVM": null,
-      "forest": null
-    },
-    "('flagged', 'sd')": {
-      "quantum committee": 0.0031426968,
-      "matched control": 0.0031426968,
-      "reference": null,
-      "quantum SVM": null,
-      "poly SVM": null,
-      "RBF SVM": null,
-      "forest": null
-    },
-    "('accuracy_unflagged', 'mean')": {
-      "quantum committee": 0.963324746,
-      "matched control": 0.9635918051,
-      "reference": null,
-      "quantum SVM": null,
-      "poly SVM": null,
-      "RBF SVM": null,
-      "forest": null
-    },
-    "('accuracy_unflagged', 'sd')": {
-      "quantum committee": 0.000126504,
-      "matched control": 0.0001246706,
-      "reference": null,
-      "quantum SVM": null,
-      "poly SVM": null,
-      "RBF SVM": null,
-      "forest": null
-    },
-    "('fit_seconds', 'mean')": {
-      "quantum committee": 1.1043169093,
-      "matched control": 1.0211505113,
-      "reference": 0.024258928,
-      "quantum SVM": 0.1243601227,
-      "poly SVM": 0.0339492097,
-      "RBF SVM": 0.0374710837,
-      "forest": 0.936618176
-    },
-    "('fit_seconds', 'sd')": {
-      "quantum committee": 0.0113965382,
-      "matched control": 0.0201999614,
-      "reference": 0.0,
-      "quantum SVM": 0.0057689323,
-      "poly SVM": 0.0005518622,
-      "RBF SVM": 0.002493305,
-      "forest": 0.009473082
-    },
-    "('predict_seconds', 'mean')": {
-      "quantum committee": 0.0769160083,
-      "matched control": 0.050638832,
-      "reference": 0.002738802,
-      "quantum SVM": null,
-      "poly SVM": null,
-      "RBF SVM": null,
-      "forest": null
-    },
-    "('predict_seconds', 'sd')": {
-      "quantum committee": 0.0014020345,
-      "matched control": 0.0028824532,
-      "reference": 0.0,
-      "quantum SVM": null,
-      "poly SVM": null,
-      "RBF SVM": null,
-      "forest": null
-    }
-  },
   "records": [
     {
       "model": "reference",
@@ -240,8 +22,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.024258928,
-      "predict_seconds": 0.002738802,
+      "fit_seconds": 0.017686132,
+      "predict_seconds": 0.002369082,
       "flagged": null,
       "accuracy_unflagged": null,
       "recall_alfalfa": 0.94,
@@ -273,8 +55,8 @@
           43
         ]
       ],
-      "fit_seconds": 1.116120012,
-      "predict_seconds": 0.077896358,
+      "fit_seconds": 0.922217893,
+      "predict_seconds": 0.073738852,
       "flagged": 0.0866666667,
       "accuracy_unflagged": 0.9635036496,
       "recall_alfalfa": 0.94,
@@ -306,7 +88,7 @@
           45
         ]
       ],
-      "fit_seconds": 0.131958564,
+      "fit_seconds": 0.124916512,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -339,7 +121,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.034579675,
+      "fit_seconds": 0.039052946,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -372,7 +154,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.944220025,
+      "fit_seconds": 0.754040204,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -405,8 +187,8 @@
           44
         ]
       ],
-      "fit_seconds": 1.014545812,
-      "predict_seconds": 0.054086674,
+      "fit_seconds": 0.702365778,
+      "predict_seconds": 0.028839517,
       "flagged": 0.08,
       "accuracy_unflagged": 0.9637681159,
       "recall_alfalfa": 0.94,
@@ -438,7 +220,7 @@
           46
         ]
       ],
-      "fit_seconds": 0.034315284,
+      "fit_seconds": 0.037866746,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -471,8 +253,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.024258928,
-      "predict_seconds": 0.002738802,
+      "fit_seconds": 0.017686132,
+      "predict_seconds": 0.002369082,
       "flagged": null,
       "accuracy_unflagged": null,
       "recall_alfalfa": 0.94,
@@ -504,8 +286,8 @@
           42
         ]
       ],
-      "fit_seconds": 1.10791992,
-      "predict_seconds": 0.077918394,
+      "fit_seconds": 0.750505675,
+      "predict_seconds": 0.110834292,
       "flagged": 0.0933333333,
       "accuracy_unflagged": 0.9632352941,
       "recall_alfalfa": 0.94,
@@ -537,7 +319,7 @@
           45
         ]
       ],
-      "fit_seconds": 0.123133573,
+      "fit_seconds": 0.087948395,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -570,7 +352,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.037169026,
+      "fit_seconds": 0.024741432,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -603,7 +385,7 @@
           42
         ]
       ],
-      "fit_seconds": 0.942370672,
+      "fit_seconds": 0.634649253,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -636,8 +418,8 @@
           43
         ]
       ],
-      "fit_seconds": 1.000383355,
-      "predict_seconds": 0.047031538,
+      "fit_seconds": 0.725577609,
+      "predict_seconds": 0.031117029,
       "flagged": 0.0866666667,
       "accuracy_unflagged": 0.9635036496,
       "recall_alfalfa": 0.94,
@@ -669,7 +451,7 @@
           46
         ]
       ],
-      "fit_seconds": 0.033169247,
+      "fit_seconds": 0.026098727,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -702,8 +484,8 @@
           42
         ]
       ],
-      "fit_seconds": 0.024258928,
-      "predict_seconds": 0.002738802,
+      "fit_seconds": 0.017686132,
+      "predict_seconds": 0.002369082,
       "flagged": null,
       "accuracy_unflagged": null,
       "recall_alfalfa": 0.94,
@@ -735,8 +517,8 @@
           42
         ]
       ],
-      "fit_seconds": 1.088910796,
-      "predict_seconds": 0.074933273,
+      "fit_seconds": 0.750833504,
+      "predict_seconds": 0.062282332,
       "flagged": 0.0933333333,
       "accuracy_unflagged": 0.9632352941,
       "recall_alfalfa": 0.94,
@@ -768,7 +550,7 @@
           45
         ]
       ],
-      "fit_seconds": 0.117988231,
+      "fit_seconds": 0.090138198,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -801,7 +583,7 @@
           43
         ]
       ],
-      "fit_seconds": 0.04066455,
+      "fit_seconds": 0.024248734,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -834,7 +616,7 @@
           42
         ]
       ],
-      "fit_seconds": 0.923263831,
+      "fit_seconds": 0.633284791,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -867,8 +649,8 @@
           43
         ]
       ],
-      "fit_seconds": 1.048522367,
-      "predict_seconds": 0.050798284,
+      "fit_seconds": 0.679497183,
+      "predict_seconds": 0.029491942,
       "flagged": 0.0866666667,
       "accuracy_unflagged": 0.9635036496,
       "recall_alfalfa": 0.94,
@@ -900,7 +682,7 @@
           46
         ]
       ],
-      "fit_seconds": 0.034363098,
+      "fit_seconds": 0.028403016,
       "predict_seconds": null,
       "flagged": null,
       "accuracy_unflagged": null,
@@ -984,11 +766,11 @@
       "inputs": "13 raw features -> 8 train-fitted PCA numbers",
       "preprocessing_fitted_values": 159,
       "fit_seconds": {
-        "preprocessing": 0.004822687998967012,
-        "quantum": 0.13195856400125194,
-        "rbf": 0.034579674997075927,
-        "forest": 0.9442200250014139,
-        "total": 1.1158932090002054
+        "preprocessing": 0.004009307998785516,
+        "quantum": 0.1249165119988902,
+        "rbf": 0.03905294599826448,
+        "forest": 0.754040203999466,
+        "total": 0.9220605400005297
       },
       "members": {
         "quantum": {
@@ -1032,11 +814,11 @@
       "inputs": "13 raw features -> 8 train-fitted PCA numbers",
       "preprocessing_fitted_values": 159,
       "fit_seconds": {
-        "preprocessing": 0.007931584001198644,
-        "poly": 0.03431528399960371,
-        "rbf": 0.03207528599887155,
-        "forest": 0.9398345859990513,
-        "total": 1.0142231809986697
+        "preprocessing": 0.006151535002572928,
+        "poly": 0.03786674599905382,
+        "rbf": 0.03313967099893489,
+        "forest": 0.6248019489976286,
+        "total": 0.702007040999888
       },
       "members": {
         "poly": {
@@ -1096,5 +878,39 @@
     },
     "selection": "Validation macro-F1 over an equal 30-configuration grid per inspector (challenge/tune.py); frozen before any test prediction."
   },
-  "main_run_seconds": 58.019377870001335
+  "pca": {
+    "PC1": {
+      "explained variance": 0.5256,
+      "stretch by 2nd scaler (vs PC1)": 1.0
+    },
+    "PC2": {
+      "explained variance": 0.3714,
+      "stretch by 2nd scaler (vs PC1)": 1.2
+    },
+    "PC3": {
+      "explained variance": 0.0659,
+      "stretch by 2nd scaler (vs PC1)": 2.8
+    },
+    "PC4": {
+      "explained variance": 0.0283,
+      "stretch by 2nd scaler (vs PC1)": 4.3
+    },
+    "PC5": {
+      "explained variance": 0.004,
+      "stretch by 2nd scaler (vs PC1)": 11.5
+    },
+    "PC6": {
+      "explained variance": 0.0019,
+      "stretch by 2nd scaler (vs PC1)": 16.8
+    },
+    "PC7": {
+      "explained variance": 0.0013,
+      "stretch by 2nd scaler (vs PC1)": 20.4
+    },
+    "PC8": {
+      "explained variance": 0.001,
+      "stretch by 2nd scaler (vs PC1)": 22.8
+    }
+  },
+  "main_run_seconds": 40.14341595899896
 }

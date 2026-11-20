@@ -22,7 +22,9 @@ import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
-from challenge import analyst, guard
+from challenge import analyst, guard, report
+from challenge.classical import reference
+from challenge.config import EXPERIMENT, FEATURES, MANIFEST, QUBITS
 from challenge.data import ROOT, load_data
 from challenge.kernel import QuantumKernelSVM, fidelity
 from challenge.metrics import score
@@ -30,7 +32,7 @@ from challenge.submission import LABELS, MatchedControl, Submission
 
 BG, PANEL, PANEL2, GRID = '#04070d', '#0a1220', '#0f1b2f', '#18304f'
 CYAN, MAGENTA, GREEN, AMBER, RED, TEXT, DIM = '#00e5ff', '#ff2bd6', '#39ff88', '#ffb000', '#ff3860', '#cfe8ff', '#5f7a99'
-CROP_COLORS = {'alfalfa': GREEN, 'maize': AMBER, 'wheat': CYAN}
+CROP_COLORS = dict(zip(LABELS, [GREEN, AMBER, CYAN, MAGENTA, RED, TEXT]))  # one colour per manifest crop
 OUT = ROOT / 'outputs'
 matplotlib.rcParams.update({'figure.facecolor': PANEL, 'axes.facecolor': BG, 'axes.edgecolor': GRID,
                             'axes.labelcolor': TEXT, 'text.color': TEXT, 'xtick.color': DIM, 'ytick.color': DIM,
@@ -60,7 +62,7 @@ class Console(tk.Tk):
                                                          b=(10, 'bold'), l=(13, 'bold'), xl=(20, 'bold'),
                                                          xxl=(30, 'bold')).items()}
         self.jobs, self.t0, self.ready = queue.Queue(), time.time(), False
-        self.adv, self.cur, self.phases = None, 0, np.zeros(8)
+        self.adv, self.cur, self.phases = None, 0, np.zeros(QUBITS)
         self.header(); self.sidebar(); self.statusbar()
         self.main = tk.Frame(self, bg=BG); self.main.pack(side='left', fill='both', expand=True, padx=(0, 14), pady=10)
         self.pages = {}
@@ -122,15 +124,17 @@ class Console(tk.Tk):
     # ---------- chrome ----------
     def header(self):
         top = tk.Frame(self, bg=BG); top.pack(fill='x', padx=14, pady=(10, 0))
-        left = tk.Frame(top, bg=BG); left.pack(side='left')
+        right = tk.Frame(top, bg=BG); right.pack(side='right')  # packed first: the clock and pills keep their room
+        left = tk.Frame(top, bg=BG); left.pack(side='left', fill='x', expand=True)
         tk.Label(left, text='◈ CROPGUARD-Q', bg=BG, fg=CYAN, font=self.f['xl']).pack(anchor='w')
-        tk.Label(left, text='QUANTUM CROP-INTEGRITY CONSOLE  ·  DOUKKALA, MOROCCO  ·  SENTINEL-2  ·  25 APR 2024',
-                 bg=BG, fg=DIM, font=self.f['s']).pack(anchor='w')
-        right = tk.Frame(top, bg=BG); right.pack(side='right')
+        rows = MANIFEST['rows']
+        self.label(left, f"QUANTUM CROP-INTEGRITY CONSOLE  ·  SENTINEL-2 {MANIFEST['observation_date']}  ·  "
+                         f"{rows['train']} / {rows['validation']} / {rows['test']} FIELDS  ·  {', '.join(LABELS).upper()}",
+                   DIM, 's', wrap=True).pack(anchor='w', fill='x')
         self.clock = tk.Label(right, bg=BG, fg=TEXT, font=self.f['l']); self.clock.pack(anchor='e')
         self.pills = tk.Frame(right, bg=BG); self.pills.pack(anchor='e')
         self.pill_core = self.pill('CORE: BOOTING', AMBER)
-        self.pill('8 QUBITS · EXACT', MAGENTA)
+        self.pill(f'{QUBITS} QUBITS · EXACT', MAGENTA)
         self.scan = tk.Canvas(self, bg=BG, height=4, highlightthickness=0); self.scan.pack(fill='x', padx=14, pady=(8, 6))
 
     def pill(self, text, color):
@@ -189,17 +193,24 @@ class Console(tk.Tk):
         d = dict(F=F, X=tr[F].to_numpy(), y=tr.target.to_numpy(), Xv=va[F].to_numpy(), yv=va.target.to_numpy(),
                  ids=va.sample_id.to_numpy())
         t = time.perf_counter(); d['sub'] = Submission().fit(d['X'], d['y'], 0)
-        log(f'[ OK ] PCA-8 fitted on 914 training fields; 914 eight-qubit states simulated ({time.perf_counter() - t:.1f} s)')
+        log(f"[ OK ] PCA-{QUBITS} fitted on {len(d['X'])} training fields; {len(d['X'])} {QUBITS}-qubit states simulated "
+            f"({time.perf_counter() - t:.1f} s)")
         d['ctrl'] = MatchedControl().fit(d['X'], d['y'], 0)
         log('[ OK ] matched classical control armed (polynomial SVM replaces the quantum SVM)')
         d['ins'] = d['sub'].inspect(d['Xv']); d['ins_c'] = d['ctrl'].inspect(d['Xv'])
         d['f1'] = {n: score(d['yv'], p, list(LABELS))['macro_f1'] for n, p in
                    [('quantum committee', d['ins']['prediction']), ('matched control', d['ins_c']['prediction']),
                     ('quantum SVM', d['ins']['votes'][0]), ('RBF SVM', d['ins']['votes'][1])]}
+        d['f1']['reference'] = score(d['yv'], reference().fit(d['X'], d['y']).predict(d['Xv']), list(LABELS))['macro_f1']
         d['mu'], d['sd'] = d['X'].mean(0), d['X'].std(0)
         d['studies'] = {n: read_json(n) for n in ['attack_lab.json', 'noise_study.json', 'hardware_result.json', 'hardware_result_robust.json',
                                                    'hardware_robustness.json', 'tuning_log.json', 'main_results.json']}
-        log('[ OK ] saved studies loaded: ' + ', '.join(k for k, v in d['studies'].items() if v) or 'none yet')
+        log('[ OK ] saved studies loaded: ' + (', '.join(k for k, v in d['studies'].items() if v) or 'none yet'))
+        lab, main = d['studies']['attack_lab.json'], d['studies']['main_results.json']
+        d['finding'] = [f"Clean data, quantum vs classical partner: {report.clean_section(main)[1]}." if main
+                        else 'Run the notebook for the clean comparison.',
+                        f"Tampering: the {report.tamper_section(lab)[1].removeprefix('+ ')} partner protects most." if lab
+                        else 'Run the notebook for the attack study.']
         return d
 
     def loaded(self, d):
@@ -224,9 +235,9 @@ class Console(tk.Tk):
         tiles = tk.Frame(root, bg=BG); tiles.pack(fill='x', pady=4)
         hw = d['studies']['hardware_result.json']
         for title, value, sub, color in [
-                ('QUANTUM COMMITTEE', f"{d['f1']['quantum committee']:.3f}", 'validation macro-F1 · seed 0', CYAN),
+                ('QUANTUM COMMITTEE', f"{d['f1']['quantum committee']:.3f}", f"validation macro-F1 · seed {EXPERIMENT['seeds'][0]}", CYAN),
                 ('MATCHED CONTROL', f"{d['f1']['matched control']:.3f}", 'poly SVM replaces quantum', MAGENTA),
-                ('OFFICIAL REFERENCE', '0.880', 'RBF SVM · 13 features', DIM),
+                ('OFFICIAL REFERENCE', f"{d['f1']['reference']:.3f}", f'RBF SVM · {len(FEATURES)} features (refitted)', DIM),
                 ('ALARM RATE (CLEAN)', f"{d['ins']['flag'].mean():.1%}", 'fields sent to a human', AMBER),
                 ('IBM QPU', hw['backend'] if hw else 'not run', (hw['job_id'] if hw else 'set QISKIT_IBM_TOKEN'), GREEN)]:
             t = tk.Frame(tiles, bg=PANEL, highlightthickness=1, highlightbackground=GRID)
@@ -241,26 +252,27 @@ class Console(tk.Tk):
         core = self.panel(row, 'quantum core · live phases of the selected field', grid=(0, 0))
         self.qcanvas = tk.Canvas(core, bg=PANEL, highlightthickness=0, height=200); self.qcanvas.pack(fill='both', expand=True)
         sysp = self.panel(row, 'system', grid=(0, 1))
-        for line, c in [('13 Sentinel-2 bands (B1…B12, NDVI)', TEXT), ('   │  StandardScaler → PCA-8 → StandardScaler', DIM),
+        for line, c in [(f'{len(FEATURES)} Sentinel-2 values ({FEATURES[0]}…{FEATURES[-1]})', TEXT),
+                        (f'   │  StandardScaler → PCA-{QUBITS} → StandardScaler', DIM),
                         ('   │  (fitted on training fields only)', DIM), ('   ▼', DIM),
-                        ('[ QUANTUM SVM ]  8-qubit ZZ fidelity kernel', CYAN), ('[ RBF SVM     ]  classical kernel', TEXT),
-                        ('[ FOREST      ]  300 trees', TEXT), ('   │', DIM), ('   ▼  majority vote → crop label', GREEN),
+                        (f'[ QUANTUM SVM ]  {QUBITS}-qubit ZZ fidelity kernel', CYAN), ('[ RBF SVM     ]  classical kernel', TEXT),
+                        (f"[ FOREST      ]  {EXPERIMENT['forest_trees']} trees", TEXT), ('   │', DIM), ('   ▼  majority vote → crop label', GREEN),
                         ('   ▼  disagreement → TAMPER ALARM', RED), ('', TEXT),
                         ('AI error-fixer: linear regression maps noisy', MAGENTA),
                         ('QPU similarities back to exact ones.', MAGENTA), ('', TEXT),
-                        ('Honest finding: the quantum partner is no more', AMBER),
-                        ('robust than a classical one. See ATTACK LAB.', AMBER)]:
-            self.label(sysp, line, c, 'xs').pack(anchor='w')
+                        *[(line, AMBER) for line in d['finding']]]:
+            self.label(sysp, line, c, 'xs', wrap=c == AMBER).pack(anchor='w', fill='x')
 
     def draw_core(self, t):
         c = self.qcanvas; c.delete('all')
         w, h = c.winfo_width(), c.winfo_height()
         if w < 50: return
         cx, cy = w / 2, h / 2 - 8; R = min(w, h) * .34; r = R * .3
-        pos = [(cx + R * math.cos(2 * math.pi * i / 8 - math.pi / 2), cy + R * math.sin(2 * math.pi * i / 8 - math.pi / 2)) for i in range(8)]
+        n = len(self.phases)
+        pos = [(cx + R * math.cos(2 * math.pi * i / n - math.pi / 2), cy + R * math.sin(2 * math.pi * i / n - math.pi / 2)) for i in range(n)]
         c.create_oval(cx - R * .45, cy - R * .45, cx + R * .45, cy + R * .45, outline=GRID, dash=(2, 4))
         c.create_text(cx, cy, text='|φ(x)⟩\n256 amplitudes', fill=DIM, font=self.f['xs'], justify='center')
-        for i in range(7):  # linear entanglement: CX-phase-CX between neighbours q_i, q_i+1 (no q7-q0 link)
+        for i in range(n - 1):  # linear entanglement: CX-phase-CX between neighbours q_i, q_i+1 (no last-first link)
             (x1, y1), (x2, y2) = pos[i], pos[i + 1]
             glow = int(120 + 120 * (0.5 + 0.5 * math.sin(t * 3 + i)))
             c.create_line(x1, y1, x2, y2, fill=f'#{glow // 4:02x}{glow // 3:02x}{glow:02x}', width=2)
@@ -290,8 +302,8 @@ class Console(tk.Tk):
         self.label(left, '✓ verified  ⚠ flagged  ✗ wrong & unflagged', DIM, 'xs').pack(anchor='w', pady=(6, 0))
         ctl = self.panel(col, 'tamper injector', fill='x', expand=False)
         self.label(ctl, 'attack budget ε (L2, standardized bands)', DIM, 'xs').pack(anchor='w')
-        self.eps = tk.DoubleVar(value=0.10)
-        tk.Scale(ctl, from_=0.01, to=0.5, resolution=0.01, orient='horizontal', variable=self.eps, bg=PANEL,
+        self.eps = tk.DoubleVar(value=EXPERIMENT['hardware']['tamper_eps'])
+        tk.Scale(ctl, from_=0.01, to=max(EXPERIMENT['attack']['eps']), resolution=0.01, orient='horizontal', variable=self.eps, bg=PANEL,
                  fg=TEXT, troughcolor=GRID, highlightthickness=0, bd=0, activebackground=MAGENTA, sliderrelief='flat',
                  font=self.f['xs']).pack(fill='x')
         self.mode = tk.StringVar(value='naive')
@@ -312,7 +324,7 @@ class Console(tk.Tk):
         right.bind('<Configure>', lambda e: self.banner.configure(wraplength=max(e.width - 40, 200)), add='+')
         cards = tk.Frame(right, bg=BG); cards.pack(fill='x', pady=4)
         self.cards = []
-        for k, name in enumerate(['QUANTUM SVM · 8 QUBITS', 'RBF SVM · CLASSICAL', 'RANDOM FOREST']):
+        for k, name in enumerate([f'QUANTUM SVM · {QUBITS} QUBITS', 'RBF SVM · CLASSICAL', 'RANDOM FOREST']):
             card = tk.Frame(cards, bg=PANEL, highlightthickness=1, highlightbackground=GRID)
             card.grid(row=0, column=k, sticky='nsew', padx=(0, 6 if k < 2 else 0)); cards.columnconfigure(k, weight=1, uniform='card')
             self.label(card, name, DIM, 'xs').pack(anchor='w', padx=8, pady=(6, 0))
@@ -356,10 +368,10 @@ class Console(tk.Tk):
                 bars.create_text(W - 2, y0 + 6, text=f'{p:.2f}', anchor='e', fill=TEXT, font=self.f['xs'])
         fig = self.band_fig; fig.clear(); ax = fig.add_subplot(111)
         z0 = (d['Xv'][self.cur] - d['mu']) / d['sd']; z1 = (x - d['mu']) / d['sd']
-        pos = np.arange(13)
+        pos = np.arange(len(FEATURES))
         ax.bar(pos - .2, z0, .4, color=CYAN, label='recorded')
         ax.bar(pos + .2, z1, .4, color=MAGENTA if self.adv is not None else GRID, label='inspected')
-        ax.set_xticks(pos, analyst.BANDS); ax.set_ylabel('SD from training mean'); ax.legend(loc='upper left', fontsize=7)
+        ax.set_xticks(pos, FEATURES); ax.set_ylabel('SD from training mean'); ax.legend(loc='upper left', fontsize=7)
         fig.tight_layout(); self.band_canvas.draw_idle()
         self.info = dict(sample_id=str(d['ids'][self.cur]), true=str(true), final=str(final), flagged=bool(flag),
                          votes={'quantum_svm': str(votes[0]), 'rbf_svm': str(votes[1]), 'forest': str(votes[2])},
@@ -370,7 +382,7 @@ class Console(tk.Tk):
         x, yi = d['Xv'][i:i + 1], guard.index(d['yv'][i:i + 1])
         fn = guard.member_margin(d['sub'], 1) if mode == 'naive' else guard.committee_margin(d['sub'], d['Xv'], guard.index(d['yv']))
         self.say(f'injecting {mode} tamper, ε = {eps} ...', MAGENTA)
-        self.bg(lambda: guard.tamper(fn, x, yi, eps, d['X'], iters=200, seed=0)[0], self.injected)
+        self.bg(lambda: guard.tamper(fn, x, yi, eps, d['X'], seed=0)[0], self.injected)
 
     def injected(self, adv):
         self.adv = adv; self.refresh()
@@ -395,7 +407,7 @@ class Console(tk.Tk):
         heat = self.panel(top, 'kernel matrix · 150 validation fields sorted by crop', grid=(0, 0))
         self.k_fig, self.k_canvas = self.figure(heat, 4.6, 3.6)
         ctl = self.panel(top, 'rotation-strength knob', grid=(0, 1))
-        self.label(ctl, 'Each 8-number field sets the angles of an 8-qubit ZZ feature map. The kernel is the overlap '
+        self.label(ctl, f'Each {QUBITS}-number field sets the angles of a {QUBITS}-qubit ZZ feature map. The kernel is the overlap '
                         '|⟨φ(x)|φ(x′)⟩|² of two exact statevectors. Too strong a rotation makes every field look '
                         'unlike every other (kernel collapse).', TEXT, 'xs', wrap=True).pack(anchor='w', fill='x')
         self.scale = tk.DoubleVar(value=q.scale)
@@ -428,7 +440,7 @@ class Console(tk.Tk):
     def recompute(self):
         d, s = self.d, round(self.scale.get(), 3)
         C = d['sub'].members[0].svc.C
-        self.core_out.configure(text='simulating 1064 statevectors ...', fg=AMBER)
+        self.core_out.configure(text=f"simulating {len(d['X']) + len(d['Xv'])} statevectors ...", fg=AMBER)
         def work():
             Z, Zv = d['sub'].transform(d['X']), d['sub'].transform(d['Xv'])
             m = QuantumKernelSVM(scale=s, C=C).fit(Z, d['y'])
@@ -451,7 +463,7 @@ class Console(tk.Tk):
 
     def page_attack(self, root):
         top = tk.Frame(root, bg=BG); top.pack(fill='x')
-        self.button(top, 'RUN QUICK STUDY (seed 0, naive attacker)', self.quick_attack, MAGENTA).pack(side='left', pady=4)
+        self.button(top, f"RUN QUICK STUDY (seed {EXPERIMENT['seeds'][0]}, naive attacker)", self.quick_attack, MAGENTA).pack(side='left', pady=4)
         self.attack_note = self.label(top, '', DIM, 's'); self.attack_note.pack(side='left', padx=12)
         p = self.panel(root, 'tampered fields that slip through (all inspectors agree on a wrong crop)')
         self.a_fig, self.a_canvas = self.figure(p, 9, 3.4)
@@ -464,8 +476,9 @@ class Console(tk.Tk):
     def quick_attack(self):
         d = self.d
         self.say('running naive tamper study on 150 validation fields ...', MAGENTA)
-        self.bg(lambda: guard.tamper_study(d['X'], d['y'], d['Xv'], d['yv'], seeds=(0,), adaptive=False)[0],
-                lambda rows: self.draw_attack(rows, 'quick study: seed 0, naive attacker only (live)'))
+        seed = EXPERIMENT['seeds'][0]
+        self.bg(lambda: guard.tamper_study(d['X'], d['y'], d['Xv'], d['yv'], seeds=(seed,), adaptive=False)[0],
+                lambda rows: self.draw_attack(rows, f'quick study: seed {seed}, naive attacker only (live)'))
 
     def draw_attack(self, rows, note):
         self.attack_note.configure(text=note)
@@ -497,7 +510,9 @@ class Console(tk.Tk):
         self.label(top, '\n'.join(f"{r['level']}× noise   raw {r['mae_raw']:.3f}   ZNE {r['mae_zne']:.3f}   AI fixer {r['mae_fixed']:.3f}"
                                    for r in st['rows']), GREEN, 's').pack(anchor='w')
         self.label(top, f"subset: {st['n_train']} training × {st['n_val']} validation fields, {st['n_cal']} calibration pairs, "
-                        'simulated device (qiskit-aer). The fixer is one straight line fitted on calibration pairs only.',
+                        f"simulated device built from real {st.get('profile', {}).get('device', '?')} calibration "
+                        f"({st.get('profile', {}).get('retrieved_utc', 'date unknown')}). "
+                        'The fixer is one straight line fitted on calibration pairs only.',
                    DIM, 'xs', wrap=True).pack(anchor='w', fill='x')
         row = tk.Frame(root, bg=BG); row.pack(fill='both', expand=True)
         row.columnconfigure((0, 1), weight=1, uniform='n'); row.rowconfigure(0, weight=1)
@@ -518,8 +533,8 @@ class Console(tk.Tk):
 
     def page_qpu(self, root):
         st = self.d['studies']
-        runs = [(n, st[f]) for n, f in [('submitted model · C=100', 'hardware_result.json'),
-                                         ('hardware-ready model · C=1', 'hardware_result_robust.json')] if st.get(f)]
+        runs = [(f"{n} · C={st[f].get('quantum_params', {}).get('C', '?')}", st[f])
+                for n, f in [('submitted model', 'hardware_result.json'), ('hardware-ready model', 'hardware_result_robust.json')] if st.get(f)]
         top = self.panel(root, 'inference-only runs on IBM quantum hardware', fill='x', expand=False)
         token = bool(os.environ.get('QISKIT_IBM_TOKEN'))
         b = self.button(top, 'SUBMIT NEW INFERENCE JOB', self.submit_qpu, GREEN if token else DIM); b.pack(anchor='e')
@@ -562,15 +577,18 @@ class Console(tk.Tk):
         self.label(p2, runs[0][1]['scope'], DIM, 'xs', wrap=True).pack(anchor='w', fill='x', pady=(4, 0))
 
     def submit_qpu(self):
-        if not messagebox.askyesno('IBM Quantum', 'Submit an inference-only job (4 fields × support vectors + 40 calibration '
-                                                  'pairs, 512 shots) on the least busy IBM backend? It uses QPU time from your plan.'):
+        hw = EXPERIMENT['hardware']
+        if not messagebox.askyesno('IBM Quantum', f"Submit an inference-only job ({len(LABELS) + 1} fields × "
+                                                  f"{len(self.d['sub'].members[0].svc.support_)} support vectors + {hw['calibration_pairs']} "
+                                                  f"calibration pairs, {hw['shots']} shots) on the least busy IBM backend? "
+                                                  'It uses QPU time from your plan.'):
             return
         from challenge import hardware_kernel as hk
         d = self.d
         self.say('submitting inference-only job to IBM Quantum ... (queue time varies)', GREEN)
         def work():
             fields = hk.pick_fields(d['sub'], d['X'], d['Xv'], d['yv'], d['ids'])
-            return hk.run(d['sub'], fields, hk.connect(), shots=512, n_cal=40, approved=True)
+            return hk.run(d['sub'], fields, hk.connect(), approved=True)
         self.bg(work, lambda hw: self.say(f"QPU job {hw['job_id']} done on {hw['backend']}: kernel MAE raw {hw['mae_raw']:.3f} → "
                                           f"fixed {hw['mae_fixed']:.3f}. Restart the console to view it.", GREEN))
 

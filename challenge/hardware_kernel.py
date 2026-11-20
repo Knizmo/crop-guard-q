@@ -5,6 +5,7 @@ approved=True. The committee is trained locally and frozen. The QPU only measure
 between a few validation fields and the quantum SVM's support vectors; nothing is trained on hardware.
 Calibration pairs of training fields (exact value known) ride in the same job, so the AI error-fixer is
 fitted on that device in that session. One small fixed-model inference example, not an accuracy estimate.
+Shots, calibration pairs, the tamper budget and the C candidates come from configs/experiment.json ("hardware").
 """
 import json
 import os
@@ -12,12 +13,12 @@ from datetime import datetime, timezone
 
 import numpy as np
 
-from .data import ROOT
+from .config import EXPERIMENT, LABELS, OUT, QUBITS
 from .kernel import fidelity
-from .mitigation import apply_fixer, circuit, fit_fixer
-from .submission import LABELS
+from .mitigation import apply_fixer, circuit, device_profile, fit_fixer
 
-RESULT = ROOT / 'outputs/hardware_result.json'
+HW = EXPERIMENT['hardware']
+RESULT = OUT / 'hardware_result.json'
 
 
 def connect(backend_name=None):
@@ -25,10 +26,10 @@ def connect(backend_name=None):
     # Credentials stay in the user's environment, never in the notebook, outputs or git.
     service = QiskitRuntimeService(channel='ibm_quantum_platform', token=os.environ['QISKIT_IBM_TOKEN'])
     if backend_name: return service.backend(backend_name)
-    return service.least_busy(operational=True, simulator=False, min_num_qubits=8)
+    return service.least_busy(operational=True, simulator=False, min_num_qubits=QUBITS)
 
 
-def build(sub, X_fields, n_cal=40, seed=0):
+def build(sub, X_fields, n_cal=HW['calibration_pairs'], seed=0):
     """Circuits: every field against every support vector, then n_cal training calibration pairs."""
     q = sub.members[0]; s = q.scale
     Z, Zsv = sub.transform(X_fields), q.train_X[q.svc.support_]
@@ -40,7 +41,7 @@ def build(sub, X_fields, n_cal=40, seed=0):
     return circuits, exact
 
 
-def pick_fields(sub, X_train, Xv, yv, ids, eps=0.1, seed=0):
+def pick_fields(sub, X_train, Xv, yv, ids, eps=HW['tamper_eps'], seed=0):
     """One typical verified field per crop, plus one tampered field that the alarm flags.
     'Typical' = median quantum margin among eligible fields, so the demo is neither the easiest nor the hardest case."""
     from .guard import index, margin, member_margin, tamper
@@ -74,8 +75,8 @@ def residuals(hw):
     return apply_fixer(fit_fixer(measured[n:], exact[n:]), measured[:n]) - exact[:n]
 
 
-def robustness_scan(Z, y, Zv, yv, errors, scale, Cs=(0.3, 1, 3, 10, 30, 100), shots=512, draws=20, seed=0):
-    """Offline, no QPU: how often does each C keep its exact validation vote under 512-shot sampling noise,
+def robustness_scan(Z, y, Zv, yv, errors, scale, Cs=HW['C_candidates'], shots=HW['shots'], draws=HW['scan_draws'], seed=0):
+    """Offline, no QPU: how often does each C keep its exact validation vote under shot sampling noise,
     and under kernel errors resampled from a real hardware run? Large C means large dual coefficients,
     which amplify small kernel errors."""
     from .kernel import QuantumKernelSVM
@@ -92,7 +93,14 @@ def robustness_scan(Z, y, Zv, yv, errors, scale, Cs=(0.3, 1, 3, 10, 30, 100), sh
     return rows
 
 
-def submit(circuits, backend, shots=512, approved=False):
+def choose_C(scan, threshold=HW['min_vote_agreement']):
+    """Hardware-ready C: the largest C whose votes survive the measured hardware error at least `threshold` of the time
+    (largest C = closest to the exact-simulation winner). None if no candidate qualifies."""
+    ok = [r['C'] for r in scan if r['agree_hardware_error'] >= threshold]
+    return max(ok) if ok else None
+
+
+def submit(circuits, backend, shots=HW['shots'], approved=False):
     if not approved: raise PermissionError('Obtain approval for this hardware job first')
     if not 1 <= shots <= 4096: raise ValueError('Use 1-4096 inference shots')
     from qiskit.transpiler import generate_preset_pass_manager
@@ -104,11 +112,13 @@ def submit(circuits, backend, shots=512, approved=False):
 
 
 def zeros(job, shots):
-    return np.array([r.data.meas.get_counts().get('0' * 8, 0) / shots for r in job.result()])
+    """Share of all-zeros outcomes per circuit: the measured kernel value."""
+    return np.array([r.data.meas.get_counts().get('0' * r.data.meas.num_bits, 0) / shots for r in job.result()])
 
 
-def run(sub, fields, backend, shots=512, n_cal=40, approved=False, save=RESULT):
-    """fields: list of dicts with name, sample_id, target and X (13 raw values). Returns and saves the comparison."""
+def run(sub, fields, backend, shots=HW['shots'], n_cal=HW['calibration_pairs'], approved=False, save=RESULT):
+    """fields: list of dicts with name, sample_id, target and X (raw values). Returns and saves the comparison,
+    with the device's calibration at job time."""
     X = np.array([f['X'] for f in fields], dtype=float)
     circuits, exact = build(sub, X, n_cal)
     job, isa = submit(circuits, backend, shots, approved)
@@ -124,7 +134,8 @@ def run(sub, fields, backend, shots=512, n_cal=40, approved=False, save=RESULT):
     try: usage = job.usage()
     except Exception: usage = None
     out = dict(
-        backend=backend.name, job_id=job.job_id(), shots=shots, circuits=len(circuits), qubits=8,
+        backend=backend.name, job_id=job.job_id(), shots=shots, circuits=len(circuits), qubits=sub.members[0].n,
+        quantum_params=dict(scale=sub.members[0].scale, C=sub.members[0].svc.C),
         support_vectors=int(len(sub.members[0].svc.support_)), calibration_pairs=n_cal,
         transpiled_depth=int(isa[0].depth()), transpiled_two_qubit_gates=int(sum(ops.get(g, 0) for g in ('cz', 'ecr', 'cx'))),
         physical_qubits=[int(i) for i in isa[0].layout.final_index_layout()] if isa[0].layout else None,
@@ -137,7 +148,7 @@ def run(sub, fields, backend, shots=512, n_cal=40, approved=False, save=RESULT):
                      rbf=str(local[1, i]), forest=str(local[2, i]),
                      decision_exact=d_exact[i].tolist(), decision_raw=d_raw[i].tolist(), decision_fixed=d_fixed[i].tolist())
                 for i, f in enumerate(fields)],
-        exact=exact.tolist(), measured=measured.tolist(),
+        exact=exact.tolist(), measured=measured.tolist(), calibration=device_profile(backend),
         scope='One small fixed-model inference example on a real device; not an accuracy estimate. No hardware training.')
     if save:
         save.parent.mkdir(exist_ok=True)
