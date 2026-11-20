@@ -2611,5 +2611,9 @@
     0.033203125,
     0.1015625
   ],
-  "scope": "One small fixed-model inference example on a real device; not an accuracy estimate. No hardware training."
+  "scope": "One small fixed-model inference example on a real device; not an accuracy estimate. No hardware training.",
+  "quantum_params": {
+    "scale": 0.075,
+    "C": 1
+  }
 }

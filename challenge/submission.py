@@ -1,14 +1,14 @@
 """CropGuard-Q submission: three inspectors vote on each field and a disagreement raises a tamper flag.
 
-Input: the 13 raw features in manifest order (B1 ... B12, NDVI); IDs are never inputs.
-`fit` learns StandardScaler -> PCA(8) -> StandardScaler on the training rows only (the recipe of
-data/views/pca8.npz), so all inspectors see the same 8 numbers:
-  slot 0  partner under study: the 8-qubit quantum-kernel SVM (Submission) or a polynomial SVM (MatchedControl)
+Input: the raw features in data/manifest.json order (B1 ... B12, NDVI); IDs are never inputs.
+`fit` learns StandardScaler -> PCA(qubits) -> StandardScaler on the training rows only (with 8 qubits this is
+the recipe of data/views/pca8.npz), so all inspectors see the same numbers, one per qubit:
+  slot 0  partner under study: the quantum-kernel SVM (Submission) or a polynomial SVM (MatchedControl)
   slot 1  classical RBF SVM
   slot 2  random forest (the only stochastic member: seed 0, 1, 2)
-Label = majority vote; if all three differ, the RBF SVM decides. Settings are frozen in configs/cropguard.json.
+Label = majority vote; if all three differ, the RBF SVM decides. Frozen settings: configs/cropguard.json;
+qubits and forest size: configs/experiment.json (see challenge/config.py).
 """
-import json
 from time import perf_counter
 
 import numpy as np
@@ -18,40 +18,34 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
-from .data import ROOT
+from .config import EXPERIMENT, FEATURES, LABELS, QUBITS, frozen as load_config
 from .kernel import QuantumKernelSVM
 from .metrics import probabilities
 
-LABELS = np.array(['alfalfa', 'maize', 'wheat'])
-N_FEATURES = 13
 VOTE_WEIGHTS = np.array([1, 1.001, 1])  # equal votes; the tiny extra lets the RBF SVM settle a three-way split
 
 
-def load_config():
-    return json.loads((ROOT / 'configs/cropguard.json').read_text())
-
-
 def preprocessing():
-    return make_pipeline(StandardScaler(), PCA(8, svd_solver='full'), StandardScaler())
+    return make_pipeline(StandardScaler(), PCA(QUBITS, svd_solver='full'), StandardScaler())
 
 
 def member(name, params, seed=0):
     if name == 'quantum': return QuantumKernelSVM(**params)
     if name == 'rbf': return SVC(kernel='rbf', **params)
     if name == 'poly': return SVC(kernel='poly', gamma='scale', **params)
-    if name == 'forest': return RandomForestClassifier(n_estimators=300, random_state=seed, **params)
+    if name == 'forest': return RandomForestClassifier(n_estimators=EXPERIMENT['forest_trees'], random_state=seed, **params)
     raise ValueError(f'Unknown inspector {name}')
 
 
 def scores(model, Z):
-    """Per-class scores (n, 3): SVM one-vs-rest decision values, forest probabilities."""
+    """Per-class scores (n, classes): SVM one-vs-rest decision values, forest probabilities."""
     return model.predict_proba(Z) if isinstance(model, RandomForestClassifier) else model.decision_function(Z)
 
 
 def raw_features(X):
     X = np.asarray(X, dtype=float)
-    if X.ndim != 2 or X.shape[1] != N_FEATURES or not np.isfinite(X).all():
-        raise ValueError('Expected a finite (n, 13) array of B1..B12, NDVI in manifest order')
+    if X.ndim != 2 or X.shape[1] != len(FEATURES) or not np.isfinite(X).all():
+        raise ValueError(f'Expected a finite (n, {len(FEATURES)}) array of {", ".join(FEATURES)}')
     return X
 
 
@@ -103,7 +97,7 @@ class Committee:
 
     def resources(self):
         scaler1, pca, scaler2 = self.prep
-        out = dict(inputs='13 raw features -> 8 train-fitted PCA numbers',
+        out = dict(inputs=f'{len(FEATURES)} raw features -> {pca.n_components_} train-fitted PCA numbers',
                    preprocessing_fitted_values=int(scaler1.mean_.size + scaler1.scale_.size + pca.components_.size
                                                    + pca.mean_.size + scaler2.mean_.size + scaler2.scale_.size),
                    fit_seconds=self.fit_seconds, members={})
@@ -112,7 +106,7 @@ class Committee:
                 n, sv = len(model.train_states), int(model.svc.n_support_.sum())
                 r = model.resources()
                 r.update(training_states_simulated=n, training_kernel_circuits=n * (n - 1) // 2,
-                         circuits_per_predicted_field=sv, kernel_storage_bytes=n * n * 8,
+                         circuits_per_predicted_field=sv, kernel_storage_bytes=n * n * np.dtype(float).itemsize,
                          dual_coefficients=int(model.svc.dual_coef_.size), simulation='exact statevector')
             elif name == 'forest':
                 nodes = [t.tree_.node_count for t in model.estimators_]

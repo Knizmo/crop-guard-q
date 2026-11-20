@@ -5,49 +5,50 @@
    "support_vectors": 395,
    "max_dual": 0.3,
    "exact_macro_f1": 0.8932613261326132,
-   "agree_shot_noise": 0.9936666666666666,
-   "agree_hardware_error": 0.9813333333333333
+   "agree_shot_noise": 0.9933333333333332,
+   "agree_hardware_error": 0.9853333333333334
   },
   {
    "C": 1,
    "support_vectors": 300,
    "max_dual": 1.0,
    "exact_macro_f1": 0.893157851548975,
-   "agree_shot_noise": 0.9776666666666667,
-   "agree_hardware_error": 0.968
+   "agree_shot_noise": 0.978,
+   "agree_hardware_error": 0.9693333333333334
   },
   {
    "C": 3,
    "support_vectors": 265,
    "max_dual": 3.0,
    "exact_macro_f1": 0.8996857152196958,
-   "agree_shot_noise": 0.9333333333333332,
-   "agree_hardware_error": 0.8923333333333335
+   "agree_shot_noise": 0.9339999999999998,
+   "agree_hardware_error": 0.8906666666666666
   },
   {
    "C": 10,
    "support_vectors": 230,
    "max_dual": 10.0,
    "exact_macro_f1": 0.9129790530073416,
-   "agree_shot_noise": 0.796,
-   "agree_hardware_error": 0.7300000000000001
+   "agree_shot_noise": 0.8099999999999999,
+   "agree_hardware_error": 0.7206666666666666
   },
   {
    "C": 30,
    "support_vectors": 225,
    "max_dual": 30.0,
    "exact_macro_f1": 0.9198606527319398,
-   "agree_shot_noise": 0.6253333333333333,
-   "agree_hardware_error": 0.5546666666666666
+   "agree_shot_noise": 0.6279999999999999,
+   "agree_hardware_error": 0.5663333333333334
   },
   {
    "C": 100,
    "support_vectors": 222,
    "max_dual": 100.0,
    "exact_macro_f1": 0.91999533286662,
-   "agree_shot_noise": 0.48233333333333334,
-   "agree_hardware_error": 0.445
+   "agree_shot_noise": 0.49000000000000005,
+   "agree_hardware_error": 0.43166666666666664
   }
  ],
+ "chosen_C": 1,
  "source": "hardware_result.json residuals after the AI error-fixer"
 }

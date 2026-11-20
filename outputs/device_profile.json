@@ -1,0 +1,13 @@
+{
+  "device": "ibm_fez",
+  "retrieved_utc": "2026-11-20T11:02:17+00:00",
+  "qubits": 156,
+  "two_qubit_gate": "cz",
+  "sx_error": 0.0003006682424840566,
+  "sx_seconds": 2.4e-08,
+  "two_qubit_error": 0.0024537694137009014,
+  "two_qubit_seconds": 6.8e-08,
+  "readout_error": 0.01043701171875,
+  "t1_seconds": 0.00013033033048839008,
+  "t2_seconds": 9.467734024558492e-05
+}

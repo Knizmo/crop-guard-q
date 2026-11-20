@@ -6,9 +6,9 @@ import numpy as np
 
 from challenge import analyst, guard
 from challenge.data import load_data
-from challenge.hardware_kernel import quantum_votes
+from challenge.hardware_kernel import choose_C, quantum_votes
 from challenge.kernel import QuantumKernelSVM, fidelity
-from challenge.mitigation import circuit, ideal_zeros
+from challenge.mitigation import circuit, ideal_zeros, noise_model
 from challenge.submission import LABELS, Committee, Submission
 
 
@@ -22,6 +22,28 @@ def test_kernel_circuit_matches_exact_fidelity():
     q = QuantumKernelSVM(scale=0.075)
     a, b = np.random.default_rng(1).normal(size=(2, 8))
     assert np.isclose(ideal_zeros(circuit(q.scale * a, q.scale * b)), fidelity(q.states(a[None]), q.states(b[None]))[0, 0])
+
+
+def test_kernel_follows_data_width():
+    """Nothing assumes 8 qubits: a 4-feature view gives a 4-qubit kernel, still equal to Qiskit."""
+    q = QuantumKernelSVM(scale=0.2)
+    X = np.random.default_rng(2).normal(size=(5, 4))
+    assert q.states(X).shape == (5, 16) and np.allclose(q.states(X), q.qiskit_states(X), atol=1e-12)
+    assert np.isclose(ideal_zeros(circuit(0.2 * X[0], 0.2 * X[1])), fidelity(q.states(X[:1]), q.states(X[1:2]))[0, 0])
+
+
+def test_choose_C_rule():
+    scan = [dict(C=1, agree_hardware_error=0.97), dict(C=3, agree_hardware_error=0.90), dict(C=100, agree_hardware_error=0.45)]
+    assert choose_C(scan, 0.95) == 1 and choose_C(scan, 0.40) == 100 and choose_C(scan, 0.99) is None
+
+
+def test_noise_model_from_real_calibration():
+    try: import qiskit_aer  # noqa: F401  optional extra
+    except ImportError: return
+    profile = dict(sx_error=3e-4, sx_seconds=2.4e-8, two_qubit_error=2.5e-3, two_qubit_seconds=6.8e-8,
+                   readout_error=0.01, t1_seconds=1.3e-4, t2_seconds=9.5e-5)
+    nm = noise_model(profile, level=2)
+    assert {'cx', 'sx', 'x', 'measure'} <= set(nm.noise_instructions)
 
 
 def test_vote_rule():

@@ -14,10 +14,11 @@ import os
 import urllib.request
 from urllib.parse import urlparse
 
-BANDS = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A', 'B9', 'B11', 'B12', 'NDVI']
+from .config import FEATURES as BANDS, QUBITS
+
 MAX_CHARS = 2500  # model output is untrusted text: shown as plain text, capped, never executed
 
-SYSTEM = ('You are a security analyst for a satellite crop-claim checker. Three independent inspectors (an 8-qubit '
+SYSTEM = (f'You are a security analyst for a satellite crop-claim checker. Three independent inspectors (a {QUBITS}-qubit '
           'quantum-kernel SVM, a classical RBF SVM and a random forest) classified one field. Write a short incident '
           'note (max 120 words): verdict, why, risk, recommended next step for a human reviewer. Be factual; do not '
           'claim the quantum model is more robust or accurate; never invent data.')
